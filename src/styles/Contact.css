@@ -1,0 +1,121 @@
+/* src/styles/Contact.css */
+
+.contact-container {
+    padding-top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #f9f9f9;
+    /* padding: 4rem; */
+    font-family: Arial, sans-serif;
+    height: 100vh;
+  }
+  
+  .contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .contact-left {
+    width: 45%;
+    text-align: left;
+    padding-right: 3rem;
+  }
+  
+  .contact-right {
+    width: 50%;
+    padding-left: 3rem;
+  }
+  
+  .contact-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #111;
+  }
+  
+  .contact-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-details {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 2rem;
+  }
+  
+  .contact-details p {
+    margin-bottom: 1rem;
+  }
+  
+  .live-chat-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 2rem;
+  }
+  
+  .live-chat-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .contact-form {
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  .input-field:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: none;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 1.5rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #333;
+  }
+  
