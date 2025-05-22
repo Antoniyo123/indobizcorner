@@ -1,0 +1,97 @@
+/* CoreValues.css */
+.core-values {
+    padding: 100px 0;
+    background: white;
+  }
+  
+  .values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .values-header {
+    margin-bottom: 80px;
+  }
+  
+  .values-title {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: black;
+    margin: 0;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 40px;
+  }
+  
+  .value-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .value-icon {
+    width: 80px;
+    height: 80px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .value-item:hover .value-icon {
+    background: #FFD700;
+    transform: scale(1.05);
+  }
+  
+  .icon {
+    font-size: 32px;
+  }
+  
+  .value-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+    }
+    
+    .values-title {
+      font-size: 48px;
+    }
+    
+    .value-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .icon {
+      font-size: 24px;
+    }
+    
+    .value-title {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px 15px;
+    }
+  }

@@ -1,6 +1,5 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -20,24 +19,24 @@ const Navbar = () => {
         <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">
             <li className="navbar-item">
-              <Link to="/" className="navbar-link">Home</Link>
+              <a href="#home" className="navbar-link">Home</a>
             </li>
             <li className="navbar-item">
-              <Link to="/services" className="navbar-link">Services</Link>
+              <a href="#categories" className="navbar-link">Categories</a>
             </li>
             <li className="navbar-item">
-              <Link to="/about" className="navbar-link">About</Link>
+              <a href="#collections" className="navbar-link">Collections</a>
             </li>
             <li className="navbar-item">
-              <Link to="/contact" className="navbar-link">Contact</Link>
+              <a href="#style" className="navbar-link">Style</a>
+            </li>
+            <li className="navbar-item">
+              <a href="#contact" className="navbar-link">Contact</a>
             </li>
           </ul>
           
-          {/* Wrap the button with Link to navigate to the Consultation page */}
           <div className="navbar-buttons">
-            <Link to="/consultation"> {/* Link to the Consultation page */}
-              <button className="consultation-btn">Konsultasi</button>
-            </Link>
+            <button className="consultation-btn">Konsultasi</button>
           </div>
         </div>
         

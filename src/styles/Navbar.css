@@ -1,158 +1,92 @@
-/* src/styles/Navbar.css */
-.navbar {
+/* src/styles/Header.css */
+.header {
+    padding: 20px 40px;
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    border-bottom: 1px solid #ddd;
   }
   
-  .navbar-container {
+  .header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 4rem;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .navbar-logo h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    color: #333;
-    font-size: 1.8rem;
-    margin: 0;
-  }
-  
-  .navbar-menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .navbar-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 2rem;
-  }
-  
-  .navbar-item {
-    position: relative;
-  }
-  
-  .navbar-link {
-    color: #333;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 400;
-    transition: color 0.3s ease;
-    padding: 0.5rem 0;
-    position: relative;
-  }
-  
-  .navbar-link:hover {
-    color: #777;
-  }
-  
-  .navbar-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #333;
-    transition: width 0.3s ease;
-  }
-  
-  .navbar-link:hover::after {
     width: 100%;
   }
   
-  .navbar-buttons {
+  .logo h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-menu {
     display: flex;
     align-items: center;
   }
   
-  .consultation-btn {
-    background-color: #333;
-    color: #fff;
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-item .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item .nav-link:hover {
+    color: #f8a541; /* Change color on hover */
+  }
+  
+  .navbar-buttons .consultation-btn {
+    padding: 10px 20px;
+    background-color: #f8a541;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
-  .consultation-btn:hover {
-    background-color: #555;
+  .navbar-buttons .consultation-btn:hover {
+    background-color: #333;
   }
   
   .hamburger {
     display: none;
     cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
   }
   
-  .bar {
-    display: block;
+  .hamburger .bar {
     width: 25px;
     height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease;
     background-color: #333;
+    border-radius: 5px;
   }
   
-  /* Responsive Design */
-  @media screen and (max-width: 968px) {
-    .navbar-container {
-      padding: 1rem 2rem;
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
     }
-    
+  
+    .nav-menu.active {
+      display: flex;
+    }
+  
     .hamburger {
-      display: block;
-    }
-    
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-    
-    .navbar-menu {
-      position: fixed;
-      left: -100%;
-      top: 70px;
-      gap: 0;
-      flex-direction: column;
-      background-color: #fff;
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-      padding: 2rem 0;
-    }
-    
-    .navbar-menu.active {
-      left: 0;
-    }
-    
-    .navbar-links {
-      flex-direction: column;
-      margin-bottom: 2rem;
-    }
-    
-    .navbar-item {
-      margin: 1rem 0;
+      display: flex;
     }
   }
+  
