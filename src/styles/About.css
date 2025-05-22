@@ -20,7 +20,7 @@
     align-items: center;
     position: relative;
     background-color: rgba(0, 0, 0, 0.262);
-    color: white;
+    color: black;
   }
   
   .aboutus-hero-content {
@@ -39,10 +39,10 @@
   
   .aboutus-hero-title {
     font-size: clamp(3rem, 8vw, 8rem);
-    font-weight: 300;
-    line-height: 0.9;
+    font-weight: 500;
+    line-height: 1;
     margin-bottom: 60px;
-    color: white;
+    color:black;
   }
   
   .aboutus-hero-description {
@@ -51,7 +51,7 @@
   
   .aboutus-hero-description p {
     font-size: 1.1rem;
-    color: white;
+    color: rgb(14, 13, 13);
     line-height: 1.7;
   }
   

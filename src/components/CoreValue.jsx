@@ -19,7 +19,7 @@ const CoreValue = () => {
       <div className="values-container">
         <div className="values-header">
           <h2 className="values-title">
-            OUR CORE<br />VALUES
+            OUR CORE<br />Services
           </h2>
         </div>
         

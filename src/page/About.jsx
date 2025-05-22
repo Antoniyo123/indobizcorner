@@ -51,7 +51,7 @@ const AboutUs = () => {
             <h1 className="aboutus-hero-title">About our Company.</h1>
             <div className="aboutus-hero-description">
               <p>
-                Based in the vibrant heart of Sydney, Australia, Kreativy is not just a digital agency; 
+                Based in the vibrant heart of Jakarta, Bali, Kreativy is not just a Visa Service agent 
                 we're your partners in creativity.
               </p>
             </div>

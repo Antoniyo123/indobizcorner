@@ -6,11 +6,11 @@ const Footer = () => {
     <footer className="footer">
       {/* Hero Section */}
       <div className="hero-section">
-        <div className="logo">
+        {/* <div className="logo">
           <div className="logo-icon">
             <span className="star">✦</span>
           </div>
-        </div>
+        </div> */}
         <h1 className="hero-title">Book An Appointment Today</h1>
         {/* <p className="hero-subtitle">
           Book an appointment with our handpicked mental health and wellness experts<br />

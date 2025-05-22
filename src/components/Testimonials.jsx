@@ -9,42 +9,42 @@ const Testimonial = () => {
       id: 1,
       name: "Fatima Khoury",
       username: "dilatory_curtains_98",
-      image: "/api/placeholder/50/50",
+      image: require('../assets/img/profile1.jpg'),
       text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
     },
     {
       id: 2,
       name: "Hassan Ali",
       username: "turbulent_unicorn_29",
-      image: "/api/placeholder/50/50",
+      image: require('../assets/img/profile1.jpg'),
       text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
     },
     {
       id: 3,
       name: "Jorge Martinez",
       username: "nefarious_jellybeans_91",
-      image: "/api/placeholder/50/50",
+      image: require('../assets/img/profile1.jpg'),
       text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
     },
     {
       id: 4,
       name: "Nicolás Sánchez",
       username: "pervasive_inker_83",
-      image: "/api/placeholder/50/50",
+      image: require('../assets/img/profile1.jpg'),
       text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
     },
     {
       id: 5,
       name: "Noel Jensen",
       username: "nefarious_shop_47",
-      image: "/api/placeholder/50/50",
+      image: require('../assets/img/profile1.jpg'),
       text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
     },
     {
       id: 6,
       name: "Ahmad Khan",
       username: "antic_circus_76",
-      image: "/api/placeholder/50/50",
+      image: require('../assets/img/profile1.jpg'),
       text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
     }
   ];
