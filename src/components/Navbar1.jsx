@@ -69,7 +69,7 @@ const Navbar = () => {
         
         <div className="nav-right">
           <button className="get-started-btn">
-            Get Started
+            Konsultasi
             <span className="arrow-icon">→</span>
           </button>
         </div>
