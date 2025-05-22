@@ -1,55 +1,132 @@
-// src/pages/About.js
 import React from 'react';
-import '../styles/About.css'; // Import the CSS for styling
+import '../styles/About.css';
 
-const About = () => {
+const AboutUs = () => {
+  const teamMembers = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      position: "Creative Director",
+      image: require('../assets/img/profile3.jpg') // Memuat gambar Sarah
+    },
+    {
+      id: 2,
+      name: "Michael Chen",
+      position: "Lead Developer",
+      image: require('../assets/img/profile.jpg') // Memuat gambar Michael
+    },
+    {
+      id: 3,
+      name: "Emma Rodriguez",
+      position: "UX Designer",
+      image: require('../assets/img/profile1.jpg') // Memuat gambar Emma
+    },
+    {
+      id: 4,
+      name: "David Kim",
+      position: "Product Manager",
+      image: require('../assets/img/profile2.jpg') // Memuat gambar David
+    },
+    {
+      id: 5,
+      name: "Lisa Thompson",
+      position: "Brand Strategist",
+      image: require('../assets/img/profile3.jpg') // Memuat gambar Lisa
+    },
+    {
+      id: 6,
+      name: "Alex Miller",
+      position: "Full Stack Developer",
+      image: require('../assets/img/profile5.jpg') // Memuat gambar Alex
+    }
+  ];
+  
+
   return (
-    <div className="about-container">
-      {/* About Us Section */}
-      <section className="about-header">
-        <h1 className="about-title">ABOUT US</h1>
-        <p className="about-description">
-          Luxury Visa Services, providing seamless and reliable visa solutions for individuals and businesses.
-        </p>
-      </section>
-
-      {/* Our Philosophy Section */}
-      <section className="philosophy-section">
-        <h2 className="section-title">Our Philosophy</h2>
-        <p className="section-description">
-          We are dedicated to simplifying the visa application process. Our goal is to provide personalized services that ensure a smooth journey for all our clients.
-        </p>
-      </section>
-
-      {/* Meet the Principals Section */}
-      <section className="principals-section">
-        <h2 className="section-title">MEET THE PRINCIPALS</h2>
-
-        <div className="team-container">
-          <div className="team-member">
-            <img className="team-member-img" src={require('../assets/img/pexels-thirdman-7652469.jpg')} alt="Jay Britto" />
-            <h3 className="team-member-name">Jay Britto</h3>
-            <p className="team-member-role">Founder & Principal</p>
+    <div className="aboutus-container">
+      {/* Hero Section */}
+      <section className="aboutus-hero-section">
+        <div className="aboutus-hero-content">
+          <div className="aboutus-hero-text">
+            <h1 className="aboutus-hero-title">About our Company.</h1>
+            <div className="aboutus-hero-description">
+              <p>
+                Based in the vibrant heart of Sydney, Australia, Kreativy is not just a digital agency; 
+                we're your partners in creativity.
+              </p>
+            </div>
           </div>
-
-          <div className="team-member">
-            <img className="team-member-img" src={require('../assets/img/pexels-thirdman-7652469.jpg')} alt="David Charette" />
-            <h3 className="team-member-name">David Charette</h3>
-            <p className="team-member-role">Founder & Principal</p>
+          <div className="aboutus-scroll-indicator">
+            <div className="aboutus-scroll-circle">
+              <span>Scroll</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Us Section */}
-      <section className="contact-section">
-        <h2 className="section-title">CONTACT US</h2>
-        <p className="section-description">
-          Ready to start your visa journey? Contact us and our team will assist you in every step of the process.
-        </p>
-        <button className="contact-button">Get in Touch</button>
+      {/* Mission Section */}
+      <section className="aboutus-mission-section">
+        <div className="aboutus-mission-content">
+          <p className="aboutus-mission-text">
+            Our mission is to turn your dreams into reality, one pixel at a time. With 
+            a diverse team of designers, developers, and innovators, we're 
+            constantly pushing the boundaries of what's possible in the digital 
+            world.
+          </p>
+        </div>
+      </section>
+
+      {/* Office Images Section */}
+      <section className="aboutus-office-section">
+        <div className="aboutus-office-images">
+          <div className="aboutus-office-image aboutus-office-wide">
+            <img src={require('../assets/img/pexels-timmossholder-1722196.jpg')} alt="Office workspace with large windows" />
+          </div>
+          <div className="aboutus-office-image aboutus-office-square">
+            <img src={require('../assets/img/pexels-timmossholder-1722196.jpg')} alt="Team collaboration meeting" />
+          </div>
+          <div className="aboutus-office-image aboutus-office-tall">
+            <img src={require('../assets/img/pexels-vlad-alexandru-popa-1402787.jpg')} alt="Modern office interior" />
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="aboutus-vision-section">
+        <div className="aboutus-vision-content">
+          <h2 className="aboutus-vision-title">
+            Founded with a vision to redefine design through a modern and friendly lens, we've 
+            become more than just a design agency; we're a community of kindred spirits who share a
+          </h2>
+        </div>
+      </section>
+
+      {/* Our Team Section */}
+      <section className="aboutus-team-section">
+        <div className="aboutus-team-header">
+          <h2 className="aboutus-team-title">Our Team</h2>
+          <p className="aboutus-team-description">
+            Meet the creative minds behind our success. Our diverse team of talented professionals 
+            brings together years of experience and fresh perspectives to deliver exceptional results.
+          </p>
+        </div>
+        
+        <div className="aboutus-team-grid">
+          {teamMembers.map((member) => (
+            <div key={member.id} className="aboutus-team-member">
+              <div className="aboutus-member-image">
+                <img src={member.image} alt={member.name} />
+              </div>
+              <div className="aboutus-member-info">
+                <h3 className="aboutus-member-name">{member.name}</h3>
+                <p className="aboutus-member-position">{member.position}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
 };
 
-export default About;
+export default AboutUs;

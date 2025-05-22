@@ -12,9 +12,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">
-          <h1>IndoBizCorner</h1>
-        </div>
+      <div className="navbar-logo">
+</div>
+
         
         <div className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">

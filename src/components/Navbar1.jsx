@@ -1,5 +1,5 @@
-// Navbar.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import '../styles/Navbar1.css';
 
 const Navbar = () => {
@@ -16,15 +16,19 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <nav className="nav-container">
-        <div className="logo-section">
-            <span className="logo-icon">IndoBIZCorner</span>
-          
-        </div>
-        
+
+      <div className="logo-section">
+  <Link to="/" className="logo-link">  {/* Link ke halaman utama */}
+    <img src={require('../assets/img/logo 01.png')} alt="IndoBIZCorner Logo" className="logo-icon" />
+  </Link>
+</div>
+
+
+
         <div className="nav-menu-center">
           <div className="nav-pills">
-            <a href="#home" className="nav-pill active">Home</a>
-            
+            <Link to="/" className="nav-pill active">Home</Link>
+
             <div 
               className="nav-pill-dropdown"
               onMouseEnter={handleVisaMouseEnter}
@@ -34,44 +38,41 @@ const Navbar = () => {
                 Visa Services
                 <span className="dropdown-arrow">▼</span>
               </a>
-              
+
               {isVisaDropdownOpen && (
                 <div className="dropdown-menu">
                   <div className="dropdown-header">Visit Visa</div>
-                  <a href="#kitap" className="dropdown-item">
-                    {/* <span className="item-number">1.</span> */}
+                  <Link to="/permanent-residence" className="dropdown-item">
                     Permanent Residence Permit (Kitap)
-                  </a>
-                  <a href="#kitas" className="dropdown-item">
-                    {/* <span className="item-number">2.</span> */}
+                  </Link>
+                  <Link to="/temporary-stay" className="dropdown-item">
                     Temporary Stay Permit (Kitas)
-                  </a>
-                  <a href="#international" className="dropdown-item">
-                    {/* <span className="item-number">3.</span> */}
+                  </Link>
+                  <Link to="/international-visa" className="dropdown-item">
                     International Visa
-                  </a>
-                  <a href="#additional" className="dropdown-item">
-                    {/* <span className="item-number">4.</span> */}
+                  </Link>
+                  <Link to="/additional-services" className="dropdown-item">
                     Additional Visa Service
-                  </a>
-                  <a href="#tracking" className="dropdown-item">
-                    {/* <span className="item-number">5.</span> */}
+                  </Link>
+                  <Link to="/tracking" className="dropdown-item">
                     Tracking
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
-            
-            <a href="#about" className="nav-pill">About Us</a>
-            <a href="#contact" className="nav-pill">Contact Us</a>
+
+            <Link to="/about" className="nav-pill">About Us</Link>
+            <Link to="/contact" className="nav-pill">Contact Us</Link>
           </div>
         </div>
-        
+
         <div className="nav-right">
-          <button className="get-started-btn">
-            Konsultasi
-            <span className="arrow-icon">→</span>
-          </button>
+          <Link to="/consultation">
+            <button className="get-started-btn">
+              Konsultasi
+              <span className="arrow-icon">→</span>
+            </button>
+          </Link>
         </div>
       </nav>
     </header>
