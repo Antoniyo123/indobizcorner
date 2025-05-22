@@ -9,7 +9,7 @@ const AboutSection = () => {
         <div className="about-left">
           <div className="image-card">
             <img 
-              src="/api/placeholder/400/500" 
+              src={require('../assets/img/pexels-sound-on-3756879.jpg')} 
               alt="Professional consultant" 
               className="about-image"
             />
