@@ -11,6 +11,7 @@ import TemporaryStay from './page/Kitas'; // Halaman Temporary Stay
 import InternationalVisa from './page/InternationalVisa'; // Halaman International Visa
 import AdditionalServices from './page/AdditionalVisaService'; // Halaman Additional Services
 import Tracking from './page/Tracking'; // Halaman Tracking
+import VisitVisa from './page/VisitVisa';
 
 function App() {
   return (
@@ -19,8 +20,6 @@ function App() {
         <Navbar1 />
         <main>
           <Routes>
-          {/* <Route path="/visa-services" element={<VisaServices />} /> */}
-
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -30,6 +29,8 @@ function App() {
             <Route path="/international-visa" element={<InternationalVisa />} />
             <Route path="/additional-services" element={<AdditionalServices />} />
             <Route path="/tracking" element={<Tracking />} />
+            <Route path="/visit-visa" element={<VisitVisa />} />
+            
           </Routes>
         </main>
         <Footer />

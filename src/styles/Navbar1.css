@@ -143,6 +143,16 @@
     z-index: 1001;
     animation: dropdownFadeIn 0.3s ease-out;
   }
+  /* Tambahkan class aktif jika menggunakan NavLink */
+.nav-pill.active {
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  .dropdown-item.active {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
   
   @keyframes dropdownFadeIn {
     from {

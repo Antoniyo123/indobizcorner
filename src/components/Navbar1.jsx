@@ -1,99 +1,116 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import { NavLink } from 'react-router-dom';  // Import NavLink from react-router-dom
 import '../styles/Navbar1.css';
 
 const Navbar = () => {
-    const [isVisaDropdownOpen, setIsVisaDropdownOpen] = useState(false);
+  const [isVisaDropdownOpen, setIsVisaDropdownOpen] = useState(false);
 
-    const handleVisaMouseEnter = () => {
-      setIsVisaDropdownOpen(true);
-    };
-    
-    const handleVisaMouseLeave = () => {
-      setIsVisaDropdownOpen(false);
-    };
+  // Show dropdown when mouse enters the Visa Services area
+  const handleVisaMouseEnter = () => {
+    setIsVisaDropdownOpen(true);
+  };
+
+  // Hide dropdown when mouse leaves both the Visa Services and dropdown area
+  const handleVisaMouseLeave = () => {
+    setIsVisaDropdownOpen(false);
+  };
+
+  // Close dropdown when clicking on a link
+  const closeDropdown = () => {
+    setIsVisaDropdownOpen(false);
+  };
 
   return (
     <header className="navbar">
       <nav className="nav-container">
-
-      <div className="logo-section">
-  <Link to="/" className="logo-link"> 
-    <img src={require('../assets/img/logo 01.png')} alt="IndoBIZCorner Logo" className="logo-icon" />
-  </Link>
-</div>
-
-
-
-<div className="nav-menu-center">
-  <div className="nav-pills">
-    <Link to="/" className="nav-pill active">Home</Link>
-
-    <div 
-      className="nav-pill-dropdown"
-      onMouseEnter={handleVisaMouseEnter}
-      onMouseLeave={handleVisaMouseLeave}
-    >
-      {/* Link utama Visa Services - bisa mengarah ke halaman utama visa atau tetap sebagai dropdown trigger */}
-      <span className="nav-pill">
-        Visa Services
-        <span className="dropdown-arrow">▼</span>
-      </span>
-
-      {isVisaDropdownOpen && (
-        <div className="dropdown-menu">
-          <div className="dropdown-header">Visit Visa</div>
-          <Link 
-            to="/permanent-residence" 
-            className="dropdown-item"
-            onClick={() => setIsVisaDropdownOpen(false)} // Tutup dropdown setelah klik
-          >
-            Permanent Residence Permit (Kitap)
-          </Link>
-          <Link 
-            to="/temporary-stay" 
-            className="dropdown-item"
-            onClick={() => setIsVisaDropdownOpen(false)}
-          >
-            Temporary Stay Permit (Kitas)
-          </Link>
-          <Link 
-            to="/international-visa" 
-            className="dropdown-item"
-            onClick={() => setIsVisaDropdownOpen(false)}
-          >
-            International Visa
-          </Link>
-          <Link 
-            to="/additional-services" 
-            className="dropdown-item"
-            onClick={() => setIsVisaDropdownOpen(false)}
-          >
-            Additional Visa Service
-          </Link>
-          <Link 
-            to="/tracking" 
-            className="dropdown-item"
-            onClick={() => setIsVisaDropdownOpen(false)}
-          >
-            Tracking
-          </Link>
+        {/* Logo Section */}
+        <div className="logo-section">
+          <NavLink to="/" className="logo-link"> 
+            <img src={require('../assets/img/logo 01.png')} alt="IndoBIZCorner Logo" className="logo-icon" />
+          </NavLink>
         </div>
-      )}
-    </div>
 
-    <Link to="/about" className="nav-pill">About Us</Link>
-    <Link to="/contact" className="nav-pill">Contact Us</Link>
-  </div>
-</div>
+        {/* Navbar Links */}
+        <div className="nav-menu-center">
+          <div className="nav-pills">
+            {/* Home */}
+            <NavLink to="/" className="nav-pill" end>
+              Home
+            </NavLink>
 
+            {/* Visa Services Dropdown */}
+            <div 
+              className="nav-pill-dropdown"
+              onMouseEnter={handleVisaMouseEnter}
+              onMouseLeave={handleVisaMouseLeave}
+            >
+              <span className="nav-pill">
+                Visa Services <span className="dropdown-arrow">▼</span>
+              </span>
+
+              {/* Dropdown Menu */}
+              {isVisaDropdownOpen && (
+                <div className="dropdown-menu">
+                  {/* <div className="dropdown-header">Visit Visa</div> */}
+                  <NavLink
+                    to="/permanent-residence"
+                    className="dropdown-item"
+                    onClick={closeDropdown}
+                  >
+                    Permanent Residence Permit (Kitap)
+                  </NavLink>
+                  <NavLink
+                    to="/temporary-stay"
+                    className="dropdown-item"
+                    onClick={closeDropdown}
+                  >
+                    Temporary Stay Permit (Kitas)
+                  </NavLink>
+                  <NavLink
+                    to="/international-visa"
+                    className="dropdown-item"
+                    onClick={closeDropdown}
+                  >
+                    International Visa
+                  </NavLink>
+                  <NavLink
+                    to="/visit-visa"
+                    className="dropdown-item" 
+                    onClick={closeDropdown}
+                  >
+                    Visit Visa
+                  </NavLink>
+                  <NavLink
+                    to="/additional-services"
+                    className="dropdown-item"
+                    onClick={closeDropdown}
+                  >
+                    Additional Visa Service
+                  </NavLink>
+                  <NavLink
+                    to="/tracking"
+                    className="dropdown-item"
+                    onClick={closeDropdown}
+                  >
+                    Tracking
+                  </NavLink>
+                </div>
+              )}
+            </div>
+
+            {/* Other Links */}
+            <NavLink to="/about" className="nav-pill">About Us</NavLink>
+            <NavLink to="/contact" className="nav-pill">Contact Us</NavLink>
+          </div>
+        </div>
+
+        {/* Consultation Button */}
         <div className="nav-right">
-          <Link to="/consultation">
+          <NavLink to="/consultation">
             <button className="get-started-btn">
-              Konsultasi
-              <span className="arrow-icon">→</span>
+              Konsultasi <span className="arrow-icon">→</span>
             </button>
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </header>
