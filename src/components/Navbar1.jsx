@@ -101,6 +101,7 @@ const Navbar = () => {
             {/* Other Links */}
             <NavLink to="/about" className="nav-pill">About Us</NavLink>
             <NavLink to="/contact" className="nav-pill">Contact Us</NavLink>
+            <NavLink to="/news" className="nav-pill">News</NavLink>
           </div>
         </div>
 

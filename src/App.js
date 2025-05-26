@@ -12,6 +12,8 @@ import InternationalVisa from './page/InternationalVisa'; // Halaman Internation
 import AdditionalServices from './page/AdditionalVisaService'; // Halaman Additional Services
 import Tracking from './page/Tracking'; // Halaman Tracking
 import VisitVisa from './page/VisitVisa';
+import News from './page/News';
+import ArticleDetail from './page/ArticleDetail';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
             <Route path="/additional-services" element={<AdditionalServices />} />
             <Route path="/tracking" element={<Tracking />} />
             <Route path="/visit-visa" element={<VisitVisa />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/article/:id" element={<ArticleDetail />} />
             
           </Routes>
         </main>
