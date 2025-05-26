@@ -73,7 +73,7 @@
   }
   
   .nav-pill.active {
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #FFD700, #F4C430);
     color: white;
   }
   
