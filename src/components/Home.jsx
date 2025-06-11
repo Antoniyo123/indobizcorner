@@ -4,6 +4,7 @@ import AboutSection from './AboutSection';
 import CoreValue from './CoreValue';
 import Testimonial from './Testimonials';
 import Articles from './Article';
+// import VisaService from '../page/VisaService';
 
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
       {/* Hero Section */}
       <HeroSection />
       <AboutSection/>
+      {/* <VisaService/> */}
       <CoreValue/>
       <Articles/>
       <Testimonial/>

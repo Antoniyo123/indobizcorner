@@ -91,7 +91,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="copyright">
           <span>© Copyright </span>
-          <a href="https://unifiedui.com" target="_blank" rel="noopener noreferrer">UnifiedUI.com</a>
+          <a>PT Cipta Dinamika</a>
           <span> All rights reserved. 2024</span>
         </div>
         <div className="legal-links">

@@ -1,25 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';  // Import NavLink from react-router-dom
 import '../styles/Navbar1.css';
 
 const Navbar = () => {
-  const [isVisaDropdownOpen, setIsVisaDropdownOpen] = useState(false);
-
-  // Show dropdown when mouse enters the Visa Services area
-  const handleVisaMouseEnter = () => {
-    setIsVisaDropdownOpen(true);
-  };
-
-  // Hide dropdown when mouse leaves both the Visa Services and dropdown area
-  const handleVisaMouseLeave = () => {
-    setIsVisaDropdownOpen(false);
-  };
-
-  // Close dropdown when clicking on a link
-  const closeDropdown = () => {
-    setIsVisaDropdownOpen(false);
-  };
-
   return (
     <header className="navbar">
       <nav className="nav-container">
@@ -38,65 +21,10 @@ const Navbar = () => {
               Home
             </NavLink>
 
-            {/* Visa Services Dropdown */}
-            <div 
-              className="nav-pill-dropdown"
-              onMouseEnter={handleVisaMouseEnter}
-              onMouseLeave={handleVisaMouseLeave}
-            >
-              <span className="nav-pill">
-                Visa Services <span className="dropdown-arrow">▼</span>
-              </span>
-
-              {/* Dropdown Menu */}
-              {isVisaDropdownOpen && (
-                <div className="dropdown-menu">
-                  {/* <div className="dropdown-header">Visit Visa</div> */}
-                  <NavLink
-                    to="/permanent-residence"
-                    className="dropdown-item"
-                    onClick={closeDropdown}
-                  >
-                    Permanent Residence Permit (Kitap)
-                  </NavLink>
-                  <NavLink
-                    to="/temporary-stay"
-                    className="dropdown-item"
-                    onClick={closeDropdown}
-                  >
-                    Temporary Stay Permit (Kitas)
-                  </NavLink>
-                  <NavLink
-                    to="/international-visa"
-                    className="dropdown-item"
-                    onClick={closeDropdown}
-                  >
-                    International Visa
-                  </NavLink>
-                  <NavLink
-                    to="/visit-visa"
-                    className="dropdown-item" 
-                    onClick={closeDropdown}
-                  >
-                    Visit Visa
-                  </NavLink>
-                  <NavLink
-                    to="/additional-services"
-                    className="dropdown-item"
-                    onClick={closeDropdown}
-                  >
-                    Additional Visa Service
-                  </NavLink>
-                  <NavLink
-                    to="/tracking"
-                    className="dropdown-item"
-                    onClick={closeDropdown}
-                  >
-                    Tracking
-                  </NavLink>
-                </div>
-              )}
-            </div>
+            {/* Visa Services - Direct Link */}
+            <NavLink to="/visa-services" className="nav-pill">
+              Visa Services
+            </NavLink>
 
             {/* Other Links */}
             <NavLink to="/about" className="nav-pill">About Us</NavLink>

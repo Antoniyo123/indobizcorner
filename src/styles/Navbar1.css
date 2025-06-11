@@ -81,7 +81,7 @@
   }
   
   .nav-pill.active {
-    background: linear-gradient(135deg, #FFD700, #F4C430);
+    background: #f4c430;
     color: white;
   }
   
@@ -92,7 +92,7 @@
   }
   
   .get-started-btn {
-    background: linear-gradient(135deg, #FFD700, #F4C430);
+    background: #f4c430;
     color: black;
     border: none;
     padding: 12px 24px;

@@ -1,8 +1,11 @@
 // AboutSection.jsx
 import React from 'react';
+import { QRCodeCanvas } from 'qrcode.react'; // Menggunakan QRCodeCanvas
 import '../styles/AboutSection.css';
 
 const AboutSection = () => {
+  const url = "https://indobizcorner.vercel.app/"; // Ganti dengan URL website kamu
+
   return (
     <section className="about-section">
       <div className="about-container">
@@ -42,6 +45,17 @@ const AboutSection = () => {
                 Empowering 5,000 visa applications by 2030. Your go-to 
                 resource for high-level visa consulting and processing services.
               </p>
+            </div>
+
+            {/* Menambahkan QR Code untuk mengarahkan ke website */}
+            <div className="qr-code-section">
+              <h3>Scan QR Code to Visit Our Website</h3>
+              <QRCodeCanvas 
+                value={url}         // URL yang akan dituju saat QR code dipindai
+                size={150}          // Ukuran QR Code
+                fgColor="#000000"   // Warna teks (QR Code)
+                bgColor="#ffffff"   // Warna latar belakang
+              />
             </div>
           </div>
         </div>

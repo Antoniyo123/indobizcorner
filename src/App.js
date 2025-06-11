@@ -14,6 +14,7 @@ import Tracking from './page/Tracking'; // Halaman Tracking
 import VisitVisa from './page/VisitVisa';
 import News from './page/News';
 import ArticleDetail from './page/ArticleDetail';
+import VisaService from './page/VisaService';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/tracking" element={<Tracking />} />
             <Route path="/visit-visa" element={<VisitVisa />} />
             <Route path="/news" element={<News />} />
+            <Route path="/visa-services" element={<VisaService />} />
             <Route path="/article/:id" element={<ArticleDetail />} />
             
           </Routes>
