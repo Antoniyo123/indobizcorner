@@ -1,67 +1,157 @@
-// AboutSection.jsx
-import React from 'react';
-import { QRCodeCanvas } from 'qrcode.react'; // Menggunakan QRCodeCanvas
+// PromoSection.jsx
+import React, { useState, useEffect } from 'react';
+import { QRCodeCanvas } from 'qrcode.react';
 import '../styles/AboutSection.css';
 
-const AboutSection = () => {
-  const url = "https://indobizcorner.vercel.app/"; // Ganti dengan URL website kamu
+const PromoSection = () => {
+  const url = "https://indobizcorner.vercel.app/";
+  
+  // Data promo
+  const promoData = [
+    {
+      id: 1,
+      image: require('../assets/img/pexels-sound-on-3756879.jpg'), // Ganti dengan path gambar promo Anda
+      title: "VISA CONSULTATION SPECIAL",
+      subtitle: "Limited Time Offer",
+      description: "Get 30% off on all visa consultation services. Professional guidance for your visa application with guaranteed success rate.",
+      discount: "30% OFF",
+      validUntil: "Valid until December 31, 2025"
+    },
+    {
+      id: 2,
+      image: require('../assets/img/pexels-thirdman-7652469.jpg'), // Ganti dengan path gambar promo Anda
+      title: "BUSINESS VISA PACKAGE",
+      subtitle: "Premium Service",
+      description: "Complete business visa package including document preparation, application submission, and follow-up services.",
+      discount: "50% OFF",
+      validUntil: "Valid until January 15, 2026"
+    },
+    {
+      id: 3,
+      image: require('../assets/img/pexels-vlad-alexandru-popa-1402787.jpg'), // Ganti dengan path gambar promo Anda
+      title: "FAMILY VISA BUNDLE",
+      subtitle: "Best Value Deal",
+      description: "Special bundle for family visa applications. Cover up to 4 family members with our comprehensive visa services.",
+      discount: "40% OFF",
+      validUntil: "Valid until February 28, 2026"
+    }
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto slide functionality
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % promoData.length);
+    }, 5000); // Slide setiap 5 detik
+
+    return () => clearInterval(slideInterval);
+  }, [promoData.length]);
+
+  // Manual navigation
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % promoData.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + promoData.length) % promoData.length);
+  };
+
+  const currentPromo = promoData[currentSlide];
 
   return (
-    <section className="about-section">
-      <div className="about-container">
-        <div className="about-left">
+    <section className="promo-section">
+      <div className="promo-container">
+        <div className="promo-left">
           <div className="image-card">
+            <div className="discount-badge">
+              {currentPromo.discount}
+            </div>
+            
             <img 
-              src={require('../assets/img/pexels-sound-on-3756879.jpg')} 
-              alt="Professional consultant" 
-              className="about-image"
+              src={currentPromo.image}
+              alt={currentPromo.title}
+              className="promo-image"
             />
             
             <div className="navigation-dots">
-              <div className="dot active"></div>
-              <div className="dot"></div>
+              {promoData.map((_, index) => (
+                <div 
+                  key={index}
+                  className={`dot ${index === currentSlide ? 'active' : ''}`}
+                  onClick={() => goToSlide(index)}
+                ></div>
+              ))}
             </div>
             
             <div className="image-controls">
-              <button className="control-btn prev">
+              <button className="control-btn prev" onClick={prevSlide}>
                 <span>←</span>
               </button>
-              <button className="control-btn next">
+              <button className="control-btn next" onClick={nextSlide}>
                 <span>→</span>
               </button>
             </div>
           </div>
         </div>
         
-        <div className="about-right">
+        <div className="promo-right">
           <div className="content-card">
-            <h2 className="about-title">
-              CHOOSING ELITE<br />EXCELLENCE
-            </h2>
+            <div className="promo-header">
+              <span className="promo-subtitle">{currentPromo.subtitle}</span>
+              <h2 className="promo-title">
+                {currentPromo.title}
+              </h2>
+            </div>
             
-            <div className="empowering-section">
-              <h3 className="section-title">Empowering</h3>
-              <p className="section-description">
-                Empowering 5,000 visa applications by 2030. Your go-to 
-                resource for high-level visa consulting and processing services.
+            <div className="promo-content">
+              <p className="promo-description">
+                {currentPromo.description}
               </p>
+              
+              <div className="promo-validity">
+                <span className="validity-text">{currentPromo.validUntil}</span>
+              </div>
+              
+              <div className="promo-actions">
+                <button className="cta-button">
+                  Claim Offer Now
+                </button>
+                <button className="secondary-button">
+                  Learn More
+                </button>
+              </div>
             </div>
 
-            {/* Menambahkan QR Code untuk mengarahkan ke website */}
+            {/* QR Code Section */}
             <div className="qr-code-section">
-              <h3>Scan QR Code to Visit Our Website</h3>
+              <h3>Scan to Visit Our Website</h3>
               <QRCodeCanvas 
-                value={url}         // URL yang akan dituju saat QR code dipindai
-                size={150}          // Ukuran QR Code
-                fgColor="#000000"   // Warna teks (QR Code)
-                bgColor="#ffffff"   // Warna latar belakang
+                value={url}
+                size={120}
+                fgColor="#ffffff"
+                bgColor="transparent"
               />
             </div>
           </div>
         </div>
       </div>
+      
+      {/* Progress Bar */}
+      <div className="slide-progress">
+        <div 
+          className="progress-bar"
+          style={{
+            width: `${((currentSlide + 1) / promoData.length) * 100}%`
+          }}
+        ></div>
+      </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default PromoSection;

@@ -1,140 +1,320 @@
-/* AboutSection.css */
-.about-section {
-    padding: 100px 0;
-    background: #f8f9fa;
+/* PromoSection.css */
+.promo-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.promo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-left {
+  position: relative;
+}
+
+.image-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.promo-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover .promo-image {
+  transform: scale(1.05);
+}
+
+.navigation-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.image-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.control-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.control-btn span {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+
+.promo-right {
+  position: relative;
+}
+
+.content-card {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(15px);
+  color: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.promo-header {
+  margin-bottom: 30px;
+}
+
+.promo-subtitle {
+  display: inline-block;
+  background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.promo-title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.promo-content {
+  margin-bottom: 30px;
+}
+
+.promo-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.promo-validity {
+  margin-bottom: 25px;
+}
+
+.validity-text {
+  color: #4ecdc4;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.promo-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.secondary-button {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.qr-code-section {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qr-code-section h3 {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #cccccc;
+  font-weight: 500;
+}
+
+.slide-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+  transition: width 5s linear;
+}
+
+@media (max-width: 768px) {
+  .promo-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
   
-  .about-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-  
-  .about-left {
-    position: relative;
-  }
-  
-  .image-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .about-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .navigation-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-  }
-  
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ddd;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .dot.active {
-    background: #333;
-  }
-  
-  .image-controls {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-  }
-  
-  .control-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-    background: #f0f0f0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-  
-  .control-btn:hover {
-    background: #e0e0e0;
-    transform: translateY(-2px);
-  }
-  
-  .control-btn span {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .about-right {
-    position: relative;
+  .promo-title {
+    font-size: 32px;
   }
   
   .content-card {
-    background: black;
-    color: white;
-    padding: 60px 50px;
-    border-radius: 15px;
+    padding: 40px 30px;
   }
   
-  .about-title {
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 50px;
-    color: white;
+  .promo-actions {
+    flex-direction: column;
   }
   
-  .empowering-section {
-    margin-bottom: 40px;
+  .image-card {
+    padding: 20px;
   }
   
-  .section-title {
+  .promo-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-section {
+    padding: 60px 0;
+  }
+  
+  .promo-title {
     font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: white;
   }
   
-  .section-description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #cccccc;
-    margin: 0;
+  .content-card {
+    padding: 30px 20px;
   }
-  
-  @media (max-width: 768px) {
-    .about-container {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    
-    .about-title {
-      font-size: 36px;
-    }
-    
-    .content-card {
-      padding: 40px 30px;
-    }
-    
-    .section-title {
-      font-size: 24px;
-    }
-  }
+}
