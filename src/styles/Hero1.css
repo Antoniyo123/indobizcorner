@@ -1,13 +1,22 @@
 /* HeroSection.css */
 .hero {
     height: 100vh;
-    background-image: url('../assets/img/pexels-thirdman-7652469.jpg');
+    /* background-image: url('../assets/img/pexels-thirdman-7652469.jpg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     align-items: center;
+  }
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
   
   .hero-overlay {
@@ -29,11 +38,11 @@
   }
   
   .hero-text {
-    max-width: 600px;
+    max-width: 900px;
   }
   
   .hero-title {
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 900;
     line-height: 0.9;
     margin-bottom: 30px;
