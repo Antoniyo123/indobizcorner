@@ -10,7 +10,7 @@ const PromoSection = () => {
   const promoData = [
     {
       id: 1,
-      image: require('../assets/img/pexels-sound-on-3756879.jpg'), // Ganti dengan path gambar promo Anda
+      image: require('../assets/img/7.7 indobiz corner option 1.png'), // Ganti dengan path gambar promo Anda
       title: "VISA CONSULTATION SPECIAL",
       subtitle: "Limited Time Offer",
       description: "Get 30% off on all visa consultation services. Professional guidance for your visa application with guaranteed success rate.",
@@ -19,7 +19,7 @@ const PromoSection = () => {
     },
     {
       id: 2,
-      image: require('../assets/img/pexels-thirdman-7652469.jpg'), // Ganti dengan path gambar promo Anda
+      image: require('../assets/img/7.7 travel.png'), // Ganti dengan path gambar promo Anda
       title: "BUSINESS VISA PACKAGE",
       subtitle: "Premium Service",
       description: "Complete business visa package including document preparation, application submission, and follow-up services.",

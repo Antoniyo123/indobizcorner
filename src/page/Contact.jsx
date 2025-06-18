@@ -159,20 +159,28 @@ Jakarta Selatan 12760
 
             <div className="contact-map-card contact-slide-up" style={{ animationDelay: '0.4s' }}>
               <div className="contact-map-container">
-                <img 
-                  src="/api/placeholder/600/300" 
-                  alt="Melbourne Map Location" 
-                  className="contact-map-image"
-                />
+              <iframe
+  className="contact-map-image"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d126914.14085573106!2d106.7432838524836!3d-6.2549166825052795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1750233911648!5m2!1sid!2sid"
+  width="100%"
+  height="300"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+
+
                 <div className="contact-map-location-badge">
-                  <span>🌲 Fitzroy Gardens</span>
+                <span>🏢 Ruko Tiara Buncit</span>
+
                 </div>
                 <div className="contact-map-pin"></div>
-                <div className="contact-map-labels">
+                {/* <div className="contact-map-labels">
                   <div className="contact-map-label contact-map-label-melbourne">Melbourne</div>
                   <div className="contact-map-label contact-map-label-docklands">Docklands</div>
                   <div className="contact-map-label contact-map-label-southbank">Southbank</div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
