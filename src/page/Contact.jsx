@@ -121,8 +121,8 @@ const ContactPage = () => {
                 <Phone className="contact-card-icon" />
               </div>
               <h3 className="contact-card-title">Call</h3>
-              <p className="contact-card-text">(302) 555-0107</p>
-              <p className="contact-card-text contact-mb-0">(704) 555-0127</p>
+              <p className="contact-card-text">+62 21 2271 7665</p>
+              <p className="contact-card-text contact-mb-0">+62 812-9250-1293</p>
             </div>
 
             <div className="contact-info-card contact-slide-up" style={{ animationDelay: '0.1s' }}>
@@ -130,7 +130,10 @@ const ContactPage = () => {
                 <MapPin className="contact-card-icon" />
               </div>
               <h3 className="contact-card-title">Address</h3>
-              <p className="contact-card-text contact-mb-0">74 Goethestraße, 7560313 Frankfurt am Main, Germany</p>
+              <p className="contact-card-text contact-mb-0">Ruko Tiara Buncit Blok D12
+Jl. Kemang Utara IX, Pancoran
+Jakarta Selatan 12760
+</p>
             </div>
 
             <div className="contact-info-card contact-slide-up" style={{ animationDelay: '0.2s' }}>
@@ -235,8 +238,7 @@ const ContactPage = () => {
         </div>
       </div>
 
-      {/* Enhanced Chat Widget dengan notifikasi */}
-      {!chatOpen && (
+      {/* {!chatOpen && (
         <button
           onClick={() => setChatOpen(true)}
           className="contact-chat-toggle contact-scale-in"
@@ -246,7 +248,6 @@ const ContactPage = () => {
         </button>
       )}
 
-      {/* Enhanced Interactive Chat Box */}
       {chatOpen && (
         <div className={`contact-chat-container contact-fade-in ${chatMinimized ? 'contact-chat-minimized' : ''}`}>
           <div className="contact-chat-header">
@@ -353,7 +354,7 @@ const ContactPage = () => {
             </>
           )}
         </div>
-      )}
+      )} */}
     </div>
   );
 };

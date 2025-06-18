@@ -36,6 +36,8 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/visa-services" element={<VisaService />} />
             <Route path="/article/:id" element={<ArticleDetail />} />
+            <Route path="/news/:slug" element={<ArticleDetail />} />
+
             
           </Routes>
         </main>

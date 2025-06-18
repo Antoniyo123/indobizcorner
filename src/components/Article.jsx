@@ -1,23 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // ✅ Tambah ini
 import '../styles/Articles.css';
 
 const Articles = () => {
-  const handleArrowClick = (articleTitle) => {
-    // Navigate to news page
-    console.log(`Navigating to news page for: ${articleTitle}`);
-    
-    // For React Router (uncomment if using React Router):
-    // navigate('/news');
-    
-    // For Next.js (uncomment if using Next.js):
-    // router.push('/news');
-    
-    // For vanilla JavaScript (uncomment to use):
-    // window.location.href = '/news';
-    
-    // You can also pass the article data to the news page
-    // navigate('/news', { state: { selectedArticle: articleTitle } });
+  const navigate = useNavigate(); // ✅ Tambah ini
+
+  const handleArrowClick = () => {
+    navigate('/news'); // Langsung ke halaman /news
   };
+  
 
   return (
     <div className="articles-container">
