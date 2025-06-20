@@ -149,11 +149,11 @@ export default function VisaService() {
         <div className="hero-content">
           <h1 className="hero-title">🇮🇩 Indonesia Visa Services</h1>
           <p className="hero-subtitle">Professional visa assistance for visiting Indonesia - Fast, reliable, and hassle-free</p>
-          <div className="hero-stats">
+          {/* <div className="hero-stats">
             <div className="stat-item"><span className="stat-number">15,000+</span><span className="stat-label">Visas Processed</span></div>
             <div className="stat-item"><span className="stat-number">98%</span><span className="stat-label">Success Rate</span></div>
             <div className="stat-item"><span className="stat-number">24/7</span><span className="stat-label">Support Available</span></div>
-          </div>
+          </div> */}
         </div>
       </div>
       
