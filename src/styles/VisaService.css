@@ -183,6 +183,9 @@
   
   /* ====== MODERN VISA CARDS ====== */
   .visa-grid-modern {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
