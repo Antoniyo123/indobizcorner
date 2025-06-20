@@ -98,7 +98,7 @@ const SearchForm = ({ searchQuery, setSearchQuery, selectedCountry, setSelectedC
     <div className="search-form-container">
       <div className="search-form">
         <div className="form-row">
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="searchQuery">🔍 General Search</label>
             <input
               type="text"
@@ -108,7 +108,7 @@ const SearchForm = ({ searchQuery, setSearchQuery, selectedCountry, setSelectedC
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="form-row">
