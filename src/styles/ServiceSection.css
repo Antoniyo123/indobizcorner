@@ -1,5 +1,6 @@
 /* src/styles/VisaServices.css */
 .visa-services {
+  
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -8,11 +9,15 @@
   }
   
   .services-header {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
     text-align: center;
     margin-bottom: 60px;
   }
   
   .services-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
     font-family: var(--font-primary);
     font-size: 2.2rem;
     font-weight: 400;

@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       {/* Hero Section */}
       <div className="hero-section">
-        <h1 className="hero-title">Book An Appointment Today</h1>
+        <h1 className="hero-title-footer">Book An Appointment Today</h1>
         <button className="cta-button" onClick={() => window.open('#appointment', '_blank')}>
           Book Appointment →
         </button>
