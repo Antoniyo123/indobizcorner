@@ -135,7 +135,7 @@
 .popular-visas h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: whitesmoke;
+  color: rgb(10, 9, 9);
   margin-bottom: 1rem;
 }
 
@@ -162,13 +162,13 @@
 .contact-info h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: yellow;
+  color: rgb(21, 21, 19);
   margin-bottom: 0.5rem;
 }
 
 .contact-info p {
   font-size: 0.9rem;
-  color: whitesmoke;
+  color: rgb(11, 11, 11);
   margin-bottom: 1.5rem;
 }
 
@@ -326,7 +326,7 @@
 }
 
 .visa-card-modern {
-  /* background: white; */
+  background: white;
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -560,7 +560,7 @@
 .info-section h4 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: whitesmoke;
+  color: rgb(11, 11, 11);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -568,7 +568,7 @@
 }
 
 .info-section p {
-  color: whitesmoke;
+  color: rgb(9, 9, 9);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -711,13 +711,7 @@
     display: flex;
     flex-direction: column;
   }
-  
-  .form-group label {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: whitesmoke;
-    font-size: 0.9rem;
-  }
+
   
   .form-group input,
   .form-group select,

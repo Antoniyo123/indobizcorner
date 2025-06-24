@@ -194,6 +194,20 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
+  .client-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .client-logo:hover {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  
   
   @keyframes scroll {
     0% {

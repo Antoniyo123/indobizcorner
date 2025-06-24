@@ -38,7 +38,8 @@ function App() {
             <Route path="/article/:id" element={<ArticleDetail />} />
             <Route path="/news/:slug" element={<ArticleDetail />} />
 
-            
+            <Route path="/visa-service" element={<VisaService />} />
+
           </Routes>
         </main>
         <Footer />

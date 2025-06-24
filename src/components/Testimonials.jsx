@@ -50,10 +50,18 @@ const Testimonial = () => {
   ];
 
   const clients = [
-    "Google", "Microsoft", "Apple", "Amazon", "Meta", "Netflix", "Spotify", 
-    "Adobe", "Salesforce", "IBM", "Oracle", "SAP", "Shopify", "Airbnb", 
-    "Uber", "PayPal", "Stripe", "Zoom", "Slack", "Dropbox"
+    require('../assets/img/PT Hindo (H&M).png'),
+    require('../assets/img/PT NARI INDONESIA FOREVER.jpeg'),
+    require('../assets/img/PT. ASIAN COLLECTIONS GARMENT.webp'),
+    require('../assets/img/PT. ELGI EQUIPMENTS INDONESIA.png'),
+    require('../assets/img/PT. HONOR TECHNOLOGIES INDONESIA.jpg'),
+    require('../assets/img/PT. ESCOOP GREEN INDONESIA.jpg'),
+    require('../assets/img/PT. FUJIKURA INDONESIA.jpg'),
+    require('../assets/img/PT. EYE GRAPHIC INDONESIA.jpg'),
+    require('../assets/img/PT. GIKOKO KOGYO .jpg'),
+    require('../assets/img/PT. DAESE GARMIN.png'),
   ];
+  
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
@@ -136,11 +144,12 @@ const Testimonial = () => {
       <div className="clients-section">
         <div className="clients-wrapper">
           <div className="clients-track">
-            {[...clients, ...clients].map((client, index) => (
-              <div key={index} className="client-item">
-                {client}
-              </div>
-            ))}
+          {[...clients, ...clients].map((clientLogo, index) => (
+  <div key={index} className="client-item">
+    <img src={clientLogo} alt={`Client ${index + 1}`} className="client-logo" />
+  </div>
+))}
+
           </div>
         </div>
       </div>
