@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/VisaService.css';
+import '../styles/ApplyModal.css'
 
 const initialForm = {
-  fullName: '', email: '', phone: '', birthDate: '', nationality: 'Indonesia',
-  passportNumber: '', passportExpiry: '', travelDate: '', returnDate: '',
-  purpose: '', previousVisa: '', notes: ''
+  fullName: '',
+  email: '',
+  phone: '',
+  sponsorType: 'cipta', // 'cipta' or 'sponsor'
+  workType: '', // for working visa
+  documents: []
 };
 
 const ApplyModal = ({ service, isOpen, onClose }) => {
@@ -16,15 +20,66 @@ const ApplyModal = ({ service, isOpen, onClose }) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files);
+    setFormData(prev => ({
+      ...prev,
+      documents: [...prev.documents, ...files]
+    }));
+  };
+
+  const removeDocument = (index) => {
+    setFormData(prev => ({
+      ...prev,
+      documents: prev.documents.filter((_, i) => i !== index)
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
     setTimeout(() => {
-      alert(`Aplikasi visa ${service?.title} berhasil dikirim!`);
+      if (formData.sponsorType === 'sponsor') {
+        alert(`Aplikasi visa ${service?.title} berhasil dikirim! Agent kami akan menghubungi Anda dalam 24 jam untuk membantu proses selanjutnya.`);
+      } else {
+        alert(`Aplikasi visa ${service?.title} berhasil dikirim melalui sistem Cipta Kerja!`);
+      }
       setIsSubmitting(false);
       onClose();
       setFormData(initialForm);
     }, 2000);
+  };
+
+  const getRequiredDocuments = () => {
+    if (!service) return [];
+    
+    const serviceType = service.title.toLowerCase();
+    
+    if (serviceType.includes('tourist') || serviceType.includes('wisata')) {
+      return ['Paspor', 'Foto 4x6', 'Tiket pesawat'];
+    }
+    
+    if (serviceType.includes('business') || serviceType.includes('bisnis')) {
+      if (serviceType.includes('multiple')) {
+        return ['Paspor', 'Foto 4x6', 'Tiket pesawat', 'CV'];
+      }
+      return ['Paspor', 'Foto 4x6', 'Tiket pesawat'];
+    }
+    
+    if (serviceType.includes('family') || serviceType.includes('keluarga')) {
+      return ['Paspor', 'Foto 4x6', 'Akta Lahir (untuk anak)', 'Akta Nikah (untuk suami/istri)'];
+    }
+    
+    if (serviceType.includes('working') || serviceType.includes('kerja')) {
+      return ['Paspor', 'Foto 4x6', 'Dokumen pekerjaan (sesuai jenis)'];
+    }
+    
+    return ['Paspor', 'Foto 4x6'];
+  };
+
+  const showWorkTypeSelection = () => {
+    return service?.title.toLowerCase().includes('working') || service?.title.toLowerCase().includes('kerja');
   };
 
   if (!isOpen || !service) return null;
@@ -42,23 +97,60 @@ const ApplyModal = ({ service, isOpen, onClose }) => {
           </div>
           <button className="modal-close" onClick={onClose}>×</button>
         </div>
+        
         <div className="modal-body">
-        <form onSubmit={handleSubmit} className="apply-form">
+          <form onSubmit={handleSubmit} className="apply-form">
+            {/* Sponsor Selection */}
             <div className="form-section">
-              <h4>👤 Data Pribadi</h4>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="fullName">Nama Lengkap *</label>
+              <h4>🏢 Pilihan Layanan</h4>
+              <div className="sponsor-options">
+                <label className="radio-option">
                   <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
+                    type="radio"
+                    name="sponsorType"
+                    value="cipta"
+                    checked={formData.sponsorType === 'cipta'}
                     onChange={handleChange}
-                    required
-                    placeholder="Masukkan nama lengkap sesuai paspor"
                   />
-                </div>
+                  <div className="radio-content">
+                    <strong>Under Cipta</strong>
+                    <span>Proses otomatis melalui website</span>
+                  </div>
+                </label>
+                
+                <label className="radio-option">
+                  <input
+                    type="radio"
+                    name="sponsorType"
+                    value="sponsor"
+                    checked={formData.sponsorType === 'sponsor'}
+                    onChange={handleChange}
+                  />
+                  <div className="radio-content">
+                    <strong>Sponsor dari perusahaan sendiri</strong>
+                    <span>Agent akan membantu dengan dokumen lengkap</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            {/* Basic Information */}
+            <div className="form-section">
+              <h4>👤 Informasi Kontak</h4>
+              <div className="form-group">
+                <label htmlFor="fullName">Nama Lengkap *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
+                  placeholder="Masukkan nama lengkap sesuai paspor"
+                />
+              </div>
+              
+              <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="email">Email *</label>
                   <input
@@ -71,9 +163,6 @@ const ApplyModal = ({ service, isOpen, onClose }) => {
                     placeholder="email@example.com"
                   />
                 </div>
-              </div>
-              
-              <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="phone">Nomor Telepon *</label>
                   <input
@@ -86,140 +175,89 @@ const ApplyModal = ({ service, isOpen, onClose }) => {
                     placeholder="+62 812-3456-7890"
                   />
                 </div>
-                <div className="form-group">
-                  <label htmlFor="birthDate">Tanggal Lahir *</label>
-                  <input
-                    type="date"
-                    id="birthDate"
-                    name="birthDate"
-                    value={formData.birthDate}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
               </div>
             </div>
 
-            <div className="form-section">
-              <h4>📘 Data Paspor</h4>
-              <div className="form-row">
+            {/* Work Type Selection for Working Visa */}
+            {showWorkTypeSelection() && (
+              <div className="form-section">
+                <h4>💼 Jenis Pekerjaan</h4>
                 <div className="form-group">
-                  <label htmlFor="nationality">Kewarganegaraan</label>
+                  <label htmlFor="workType">Pilih Jenis Pekerjaan *</label>
                   <select
-                    id="nationality"
-                    name="nationality"
-                    value={formData.nationality}
+                    id="workType"
+                    name="workType"
+                    value={formData.workType}
                     onChange={handleChange}
+                    required
                   >
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Malaysia">Malaysia</option>
-                    <option value="Singapore">Singapore</option>
-                    <option value="Other">Lainnya</option>
+                    <option value="">Pilih jenis pekerjaan</option>
+                    <option value="skilled">Skilled Worker</option>
+                    <option value="professional">Professional</option>
                   </select>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="passportNumber">Nomor Paspor *</label>
-                  <input
-                    type="text"
-                    id="passportNumber"
-                    name="passportNumber"
-                    value={formData.passportNumber}
-                    onChange={handleChange}
-                    required
-                    placeholder="A1234567"
-                  />
-                </div>
+              </div>
+            )}
+
+            {/* Document Upload */}
+            <div className="form-section">
+              <h4>📎 Upload Dokumen</h4>
+              <div className="document-requirements">
+                <p><strong>Dokumen yang diperlukan:</strong></p>
+                
+                  {getRequiredDocuments().map((doc, index) => (
+                    <li key={index}>{doc}</li>
+                  ))}
+                
               </div>
               
               <div className="form-group">
-                <label htmlFor="passportExpiry">Tanggal Berakhir Paspor *</label>
+                <label htmlFor="documents">Upload Dokumen</label>
                 <input
-                  type="date"
-                  id="passportExpiry"
-                  name="passportExpiry"
-                  value={formData.passportExpiry}
-                  onChange={handleChange}
-                  required
+                  type="file"
+                  id="documents"
+                  multiple
+                  accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                  onChange={handleFileUpload}
+                  className="file-input"
                 />
-              </div>
-            </div>
-
-            <div className="form-section">
-              <h4>✈️ Rencana Perjalanan</h4>
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="travelDate">Tanggal Berangkat *</label>
-                  <input
-                    type="date"
-                    id="travelDate"
-                    name="travelDate"
-                    value={formData.travelDate}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="returnDate">Tanggal Kembali *</label>
-                  <input
-                    type="date"
-                    id="returnDate"
-                    name="returnDate"
-                    value={formData.returnDate}
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="file-help">
+                  Format yang diterima: PDF, JPG, PNG, DOC, DOCX (Max 5MB per file)
                 </div>
               </div>
-              
-              <div className="form-group">
-                <label htmlFor="purpose">Tujuan Perjalanan *</label>
-                <select
-                  id="purpose"
-                  name="purpose"
-                  value={formData.purpose}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Pilih tujuan perjalanan</option>
-                  <option value="Tourism">Wisata/Liburan</option>
-                  <option value="Business">Bisnis</option>
-                  <option value="Family Visit">Mengunjungi Keluarga</option>
-                  <option value="Conference">Konferensi/Seminar</option>
-                  <option value="Medical">Pengobatan</option>
-                  <option value="Other">Lainnya</option>
-                </select>
-              </div>
+
+              {formData.documents.length > 0 && (
+                <div className="uploaded-files">
+                  <h5>File yang sudah diupload:</h5>
+                  {formData.documents.map((file, index) => (
+                    <div key={index} className="file-item">
+                      <span className="file-name">📄 {file.name}</span>
+                      <button
+                        type="button"
+                        className="remove-file"
+                        onClick={() => removeDocument(index)}
+                        title="Hapus file"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="form-section">
-              <h4>📋 Informasi Tambahan</h4>
-              <div className="form-group">
-                <label htmlFor="previousVisa">Pernah mengajukan visa ke negara ini?</label>
-                <select
-                  id="previousVisa"
-                  name="previousVisa"
-                  value={formData.previousVisa}
-                  onChange={handleChange}
-                >
-                  <option value="">Pilih jawaban</option>
-                  <option value="Yes">Ya, pernah</option>
-                  <option value="No">Tidak pernah</option>
-                  <option value="Denied">Pernah, tapi ditolak</option>
-                </select>
+            {/* Information Notice */}
+            {formData.sponsorType === 'sponsor' && (
+              <div className="info-notice">
+                <div className="notice-content">
+                  <span className="notice-icon">ℹ️</span>
+                  <div>
+                    <strong>Dengan Sponsor</strong>
+                    <p>Agent kami akan menghubungi Anda dalam 24 jam untuk membantu melengkapi dokumen dan proses aplikasi visa.</p>
+                  </div>
+                </div>
               </div>
-              
-              <div className="form-group">
-                <label htmlFor="notes">Catatan Tambahan</label>
-                <textarea
-                  id="notes"
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleChange}
-                  rows="3"
-                  placeholder="Informasi tambahan yang ingin disampaikan..."
-                ></textarea>
-              </div>
-            </div>
+            )}
 
             <div className="form-actions">
               <button type="button" className="btn-cancel" onClick={onClose}>
