@@ -16,8 +16,10 @@ import News from './page/News';
 import ArticleDetail from './page/ArticleDetail';
 import VisaService from './page/VisaService';
 
+
 function App() {
   return (
+    
     <Router>
       <div className="app">
         <Navbar1 />
@@ -45,6 +47,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    
   );
 }
 
