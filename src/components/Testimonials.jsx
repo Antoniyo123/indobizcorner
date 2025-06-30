@@ -117,8 +117,8 @@ const createUser = async (userData) => {
     <section className="testimonial-section">
       <div className="container">
         <div className="testimonial-header">
-          <div className="testimonial-badge">TESTIMONIALS</div>
-          <h2>Our trusted clients</h2>
+          <div className="testimonial-badge">What They Said About Indobiz Corner</div>
+          <h2>Real stories from our happy clients</h2>
         </div>
         
         <div className="testimonial-slider">
@@ -136,7 +136,7 @@ const createUser = async (userData) => {
               }}
             >
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="testimonial-card">
+                <div key={testimonial.id} className="testimonial-card-testi">
                   <div className="quote-icon">
                     <svg width="32" height="24" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M7.33333 24C5.86667 24 4.58333 23.4667 3.48333 22.4C2.38333 21.3333 1.83333 20.0667 1.83333 18.6C1.83333 17.1333 2.38333 15.8667 3.48333 14.8C4.58333 13.7333 5.86667 13.2 7.33333 13.2C8.8 13.2 10.0833 13.7333 11.1833 14.8C12.2833 15.8667 12.8333 17.1333 12.8333 18.6C12.8333 20.0667 12.2833 21.3333 11.1833 22.4C10.0833 23.4667 8.8 24 7.33333 24ZM24.6667 24C23.2 24 21.9167 23.4667 20.8167 22.4C19.7167 21.3333 19.1667 20.0667 19.1667 18.6C19.1667 17.1333 19.7167 15.8667 20.8167 14.8C21.9167 13.7333 23.2 13.2 24.6667 13.2C26.1333 13.2 27.4167 13.7333 28.5167 14.8C29.6167 15.8667 30.1667 17.1333 30.1667 18.6C30.1667 20.0667 29.6167 21.3333 28.5167 22.4C27.4167 23.4667 26.1333 24 24.6667 24Z" fill="currentColor"/>

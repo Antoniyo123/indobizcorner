@@ -106,6 +106,7 @@
 
 /* Right Section - Form Styles */
 .consultation-right {
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }

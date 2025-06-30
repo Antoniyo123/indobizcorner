@@ -155,6 +155,7 @@ const News = () => {
 
   return (
     <div className="news-container">
+      <div className="news-box-container">
       <div className="news-header">
         <h1>News and insights from<br />our experts</h1>
       </div>
@@ -184,6 +185,8 @@ const News = () => {
           {newsData.slice(4, 7).map(renderNewsCard)}
         </div>
       </div>
+      </div>
+
     </div>
   );
 };

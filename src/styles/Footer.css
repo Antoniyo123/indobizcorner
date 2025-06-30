@@ -60,7 +60,7 @@
   /* Footer Content */
   .footer-content {
     display: grid;
-    grid-template-columns: 1.2fr repeat(4, 1fr);
+    grid-template-columns: 1.2fr repeat(3, 1fr);
     gap: 60px;
     padding: 0 40px 60px;
     max-width: 1400px;
@@ -82,7 +82,7 @@
   }
   
   /* Contact Section Specific */
-  .contact-info {
+  .contact-info-footer {
     display: flex;
     flex-direction: column;
     gap: 20px;

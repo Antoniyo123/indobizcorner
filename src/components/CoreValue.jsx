@@ -9,18 +9,23 @@ const WorkingProcess = () => {
   const steps = [
     {
       icon: '📄',
-      title: 'Lengkapi dokumen',
-      description: 'Upload dokumen & data diri online dengan formulir yang sudah dibuat simpel untuk Anda.'
+      title: 'Free Consultation',
+      description: 'Our team will provide tailored solutions to meet your visa needs.”'
     },
     {
       icon: '🤖',
-      title: 'Verifikasi dan pengajuan online',
-      description: 'Proses verifikasi dengan AI & tim kami untuk membantu pengecekan approval rate visa Anda.'
+      title: 'Document Submission',
+      description: 'Upload your personal details and required documents. Our team will ensure everything is complete.'
     },
     {
       icon: '💳',
-      title: 'Dapatkan visa tepat waktu',
-      description: 'Tergantung jenis visa, Anda bisa download hasilnya langsung atau kami kirim ke alamat Anda.'
+      title: 'Application and Verification',
+      description: 'Your visa application will be submitted by our team in accordance with the requirements.'
+    },
+    {
+      icon: 'done',
+      title: 'Visa Completion and Ready to Use',
+      description: 'Once the process is finished, you can download your visa immediately.'
     }
   ];
 
@@ -33,7 +38,7 @@ const WorkingProcess = () => {
       <div className="process-container">
         <div className="process-header">
           <h2 className="process-title">
-            Cara kerja Indobizcorner
+          How Indobiz Corner Works
           </h2>
         </div>
         

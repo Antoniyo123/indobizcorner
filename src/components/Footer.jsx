@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       {/* Hero Section */}
       <div className="hero-section">
-        <h1 className="hero-title-footer">Book An Appointment Today</h1>
+        <h1 className="hero-title-footer">Book Your FREE Visa Consultation        </h1>
         <button className="cta-button" onClick={() => window.open('#appointment', '_blank')}>
           Book Appointment →
         </button>
@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h3 className="footer-section-title">Contact</h3>
-          <div className="contact-info">
+          <div className="contact-info-footer">
             <div className="contact-item">
               <span className="contact-icon">📞</span>
               <div className="contact-link">
@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <span className="contact-icon">✉️</span>
-              <a href="mailto:admin@nodge.id" className="contact-link">admin@nodge.id</a>
+              <a href="mailto:hi@indobizcorner.com" className="contact-link">hi@indobizcorner.com</a>
             </div>
           </div>
         </div>

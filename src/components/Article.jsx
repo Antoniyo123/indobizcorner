@@ -13,10 +13,10 @@ const Articles = () => {
   return (
     <div className="articles-container">
       <div className="articles-header">
-        <h1>Articles</h1>
+        <h1>News & Updates
+        </h1>
         <p>
-          Explore in-depth stories, insights, and the latest news on a variety<br />
-          of pressing topics, shaping our world today.
+        Discover the latest visa regulations, travel tips, and Indobiz Corner updates here.
         </p>
       </div>
 

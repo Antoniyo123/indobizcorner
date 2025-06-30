@@ -3,6 +3,7 @@ import SuccessModal from '../components/SuccessModal';
 import { sendApplicationToCS, sendConfirmationToUser } from '../assets/services/Emailservices';
 import '../styles/VisaService.css';
 import '../styles/ApplyModal.css';
+import { apiService } from '../services/api'; // sesuaikan path-nya
 
 const initialForm = {
   fullName: '',
@@ -42,43 +43,46 @@ const ApplyModal = ({ service, isOpen, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+  
     try {
-      // Send application to CS email
-      const result = await sendApplicationToCS(formData, service);
-      
-      if (result.success) {
-        // Send confirmation email to user
-        await sendConfirmationToUser(
-          formData.email, 
-          formData.fullName, 
-          service, 
-          result.submissionId
-        );
-        
-        // Store submission result
-        setSubmissionResult({
-          submissionId: result.submissionId,
-          success: true
-        });
-        
-        // Show success modal
+      const submissionId = 'VS' + Date.now().toString().slice(-8) + Math.random().toString(36).substr(2, 4).toUpperCase();
+  
+      const data = new FormData();
+      data.append('submissionId', submissionId);
+      data.append('fullName', formData.fullName);
+      data.append('email', formData.email);
+      data.append('phone', formData.phone);
+      data.append('sponsorType', formData.sponsorType);
+      data.append('workType', formData.workType);
+  
+      // ✅ Kirim service sebagai JSON string
+      data.append('service', JSON.stringify({
+        title: service.title,
+        price: service.price
+      }));
+  
+      formData.documents.forEach((file) => {
+        data.append('documents', file);
+      });
+  
+      const response = await apiService.submitApplication(data);
+  
+      if (response?.data?.success) {
+        setSubmissionResult({ submissionId, success: true });
         setShowSuccessModal(true);
-        
-        // Reset form
         setFormData(initialForm);
-        
       } else {
-        // Handle error
-        alert(`Gagal mengirim aplikasi: ${result.error}`);
+        alert('Gagal mengirim aplikasi. Silakan coba lagi.');
       }
-    } catch (error) {
-      console.error('Submit error:', error);
-      alert('Terjadi kesalahan saat mengirim aplikasi. Silakan coba lagi.');
+    } catch (err) {
+      console.error('Submit error:', err);
+      alert('Terjadi kesalahan saat mengirim aplikasi.');
     } finally {
       setIsSubmitting(false);
     }
   };
+  
+  
 
   const handleSuccessClose = () => {
     setShowSuccessModal(false);

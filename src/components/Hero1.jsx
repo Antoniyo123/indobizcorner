@@ -18,20 +18,17 @@ const HeroSection = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1 className="hero-title">
-            <span className="title-yellow">ELITE CLICK,</span>
+            <span className="title-yellow">YOUR TRUSTED PARTNER</span>
             <br />
-            <span className="title-white">NAVIGATING</span>
+            <span className="title-white">FOR </span>
             <br />
             <span className="title-white">VISA</span>
             <br />
-            <span className="title-white">SUCCESS</span>
+            <span className="title-white">SERVICES</span>
           </h1>
 
           <p className="hero-description">
-            Elevating Your Visa Journey in Jakarta and Bali. Beyond 
-            registration, we're your strategic ally for 
-            seamless solutions, innovation, and 
-            unparalleled success. Click to excellence.
+          Trusted by thousands for fast and seamless visa processing
           </p>
         </div>
       </div>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { apiService } from '../services/api'; // sesuaikan path jika berbeda
+
 import { Phone, MapPin, MessageCircle, Mail, Send, X, Minimize2, User, Clock } from 'lucide-react';
 import '../styles/Contact.css'
 const ContactPage = () => {
@@ -40,14 +42,21 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (formData.name && formData.email && formData.message) {
-      alert('Thank you for your message! We will get back to you soon.');
-      setFormData({ name: '', email: '', message: '' });
+      try {
+        await apiService.submitContactMessage(formData);
+        alert('Thank you for your message! We will get back to you soon.');
+        setFormData({ name: '', email: '', message: '' });
+      } catch (err) {
+        console.error('Submit error:', err);
+        alert('Something went wrong. Please try again later.');
+      }
     } else {
       alert('Please fill in all fields.');
     }
   };
+  
 
   const simulateTyping = () => {
     setIsTyping(true);
@@ -141,8 +150,8 @@ Jakarta Selatan 12760
                 <MessageCircle className="contact-card-icon" />
               </div>
               <h3 className="contact-card-title">Support Center</h3>
-              <p className="contact-card-text">willie.jennings@example.com</p>
-              <p className="contact-card-text contact-mb-0">(308) 555-0121</p>
+              <p className="contact-card-text">hi@indobizcorner.com</p>
+              {/* <p className="contact-card-text contact-mb-0">(308) 555-0121</p> */}
             </div>
           </div>
 
@@ -153,8 +162,8 @@ Jakarta Selatan 12760
                 <Mail className="contact-card-icon" />
               </div>
               <h3 className="contact-card-title">Email Address</h3>
-              <p className="contact-card-text">michelle.rivera@example.com</p>
-              <p className="contact-card-text contact-mb-0">georgia.young@example.com</p>
+              <p className="contact-card-text">hi@indobizcorner.com</p>
+              {/* <p className="contact-card-text contact-mb-0">georgia.young@example.com</p> */}
             </div>
 
             <div className="contact-map-card contact-slide-up" style={{ animationDelay: '0.4s' }}>
@@ -175,12 +184,7 @@ Jakarta Selatan 12760
                 <span>🏢 Ruko Tiara Buncit</span>
 
                 </div>
-                <div className="contact-map-pin"></div>
-                {/* <div className="contact-map-labels">
-                  <div className="contact-map-label contact-map-label-melbourne">Melbourne</div>
-                  <div className="contact-map-label contact-map-label-docklands">Docklands</div>
-                  <div className="contact-map-label contact-map-label-southbank">Southbank</div>
-                </div> */}
+
               </div>
             </div>
           </div>

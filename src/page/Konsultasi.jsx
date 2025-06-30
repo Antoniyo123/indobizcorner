@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Consultation.css';
+import { apiService } from '../services/api'; // sesuaikan path jika beda
+
 
 const Consultation = () => {
   const [formData, setFormData] = useState({
@@ -22,23 +24,29 @@ const Consultation = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Consultation request submitted:', formData);
-    setShowModal(true);
-    
-    // Reset form after submission
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      company: '',
-      jobTitle: '',
-      country: '',
-      message: ''
-    });
+    try {
+      await apiService.submitConsultation(formData);
+      setShowModal(true);
+  
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        company: '',
+        jobTitle: '',
+        country: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting consultation request:', error);
+      alert('Something went wrong. Please try again later.');
+    }
   };
+  
 
   const closeModal = () => {
     setShowModal(false);
@@ -67,7 +75,7 @@ const Consultation = () => {
           </p>
           
           <div className="consultation-buttons">
-            <button className="btn-demo">Try demo</button>
+            {/* <button className="btn-demo">Try demo</button> */}
             <button className="btn-talk">
               <span className="phone-icon">📞</span>
               Talk to consultant

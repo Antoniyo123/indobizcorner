@@ -91,7 +91,7 @@
     gap: 24px;
   }
   
-  .testimonial-card {
+  .testimonial-card-testi {
     flex: 0 0 calc(33.333% - 16px);
     background: #fff;
     border-radius: 16px;

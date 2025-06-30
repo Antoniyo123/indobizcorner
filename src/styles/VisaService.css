@@ -135,7 +135,7 @@
 .popular-visas h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: rgb(10, 9, 9);
+  color: whitesmoke;
   margin-bottom: 1rem;
 }
 
@@ -162,13 +162,13 @@
 .contact-info h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: rgb(21, 21, 19);
+  color: whitesmoke;
   margin-bottom: 0.5rem;
 }
 
 .contact-info p {
   font-size: 0.9rem;
-  color: rgb(11, 11, 11);
+  color:whitesmoke;
   margin-bottom: 1.5rem;
 }
 
@@ -372,7 +372,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   line-height: 1.3;
 }
 

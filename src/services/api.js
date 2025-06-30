@@ -12,6 +12,8 @@ const api = axios.create({
   withCredentials: true, // untuk cookies/sessions
 });
 
+
+
 // Request interceptor
 api.interceptors.request.use(
   (config) => {
@@ -56,6 +58,27 @@ export const apiService = {
   
   // Test endpoint
   testApi: () => api.get('/api/test'),
+  submitApplication: (formData) =>
+    api.post('/api/submit-application', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    }),
+    submitApplication: (formData) =>
+      api.post('/api/submit-application', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }),
+  
+    // ✅ Tambahkan ini:
+    submitContactMessage: (contactData) =>
+      api.post('/api/contact-message', contactData),
+    submitConsultation: (data) => api.post('/api/consultation-request', data),
+    submitApplication: (formData) =>
+      api.post('/api/submit-application', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      }),
 };
 
 export default api;

@@ -11,18 +11,18 @@ const PromoSection = () => {
     {
       id: 1,
       image: require('../assets/img/7.7 indobiz corner option 1.png'),
-      title: "VISA CONSULTATION SPECIAL",
+      title: "EXCLUSIVE DISCOUNT FOR EXPRESS VISA",
       subtitle: "Limited Time Offer",
-      description: "Get 30% off on all visa consultation services. Professional guidance for your visa application with guaranteed success rate.",
+      description: "Save up to 77% for express visa service. Get your visa faster with professional support in every step.",
       discount: "30% OFF",
       validUntil: "Valid until December 31, 2025"
     },
     {
       id: 2,
       image: require('../assets/img/7.7 travel.png'),
-      title: "BUSINESS VISA PACKAGE",
+      title: "BALI TOUR PACKAGE",
       subtitle: "Premium Service",
-      description: "Complete business visa package including document preparation, application submission, and follow-up services.",
+      description: "All-inclusive packages with full itineraries and great hotel deals!",
       discount: "50% OFF",
       validUntil: "Valid until January 15, 2026"
     },
