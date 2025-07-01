@@ -14,8 +14,8 @@ const PromoSection = () => {
       title: "EXCLUSIVE DISCOUNT FOR EXPRESS VISA",
       subtitle: "Limited Time Offer",
       description: "Save up to 77% for express visa service. Get your visa faster with professional support in every step.",
-      discount: "30% OFF",
-      validUntil: "Valid until December 31, 2025"
+      discount: "77% OFF",
+      validUntil: "Valid until July 7, 2025"
     },
     {
       id: 2,
@@ -23,8 +23,8 @@ const PromoSection = () => {
       title: "BALI TOUR PACKAGE",
       subtitle: "Premium Service",
       description: "All-inclusive packages with full itineraries and great hotel deals!",
-      discount: "50% OFF",
-      validUntil: "Valid until January 15, 2026"
+      discount: "77% OFF",
+      validUntil: "Valid until July 7, 2026"
     },
     {
       id: 3,
@@ -32,8 +32,8 @@ const PromoSection = () => {
       title: "FAMILY VISA BUNDLE",
       subtitle: "Best Value Deal",
       description: "Special bundle for family visa applications. Cover up to 4 family members with our comprehensive visa services.",
-      discount: "40% OFF",
-      validUntil: "Valid until February 28, 2026"
+      discount: "77% OFF",
+      validUntil: "Valid until July 7, 2026"
     }
   ];
 

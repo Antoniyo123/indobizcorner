@@ -40,8 +40,8 @@ const visaServices = [
     country: 'indonesia',
     countryName: 'Indonesia',
     visaType: 'business',
-    title: 'B1 Business Visa (Visa on Arrival)',
-    description: 'Business visa on arrival for conducting business activities in Indonesia including meetings, negotiations, site visits, and signing business agreements.',
+    title: 'C1 Tourist Single Entry Visitor Visa',
+    description: 'A person who plans to visit Indonesia for the purpose of tourism',
     price: 'USD 35',
     priceNumeric: 35,
     processingTime: 'Instant (upon arrival)',
@@ -52,7 +52,7 @@ const visaServices = [
     features: ['Visa on Arrival', 'Business activities', 'Site visits allowed', 'Extendable'],
     detailedInfo: {
       validity: '30 days',
-      maxStay: '30 days (extendable for another 30 days)',
+      maxStay: 'Up to 60 Days (Extendable)',
       entries: 'Single',
       interview: 'Not required'
     },
@@ -74,7 +74,7 @@ const visaServices = [
     country: 'indonesia',
     countryName: 'Indonesia',
     visaType: 'tourist',
-    title: 'B211A Visit Visa (Tourist)',
+    title: 'Tourist Multiple Entry Visa',
     description: 'Single entry visit visa for tourism purposes, allowing longer stays in Indonesia for comprehensive travel experiences.',
     price: 'USD 50',
     priceNumeric: 50,
@@ -85,8 +85,8 @@ const visaServices = [
     iconColor: '#059669',
     features: ['60 days stay', 'Tourism activities', 'Single entry', 'Pre-arranged visa'],
     detailedInfo: {
-      validity: '90 days from issue',
-      maxStay: '60 days',
+      validity: 'Please note that the visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry',
       entries: 'Single',
       interview: 'May be required'
     },
@@ -102,8 +102,8 @@ const visaServices = [
     country: 'indonesia',
     countryName: 'Indonesia',
     visaType: 'business',
-    title: 'B211B Visit Visa (Business)',
-    description: 'Single entry visit visa for business purposes, allowing extended business activities and commercial engagements in Indonesia.',
+    title: 'Tourist Multiple Entry Visa (1 Years)',
+    description: 'A person who will visit Indonesia for recreational purposes. You can apply for a multiple-entry visa valid for 1 year. Periods of stay for this visa will be granted for up to 60 days for each visit.',
     price: 'USD 50',
     priceNumeric: 50,
     processingTime: '7-14 days',
@@ -113,8 +113,8 @@ const visaServices = [
     iconColor: '#7c3aed',
     features: ['60 days stay', 'Business activities', 'Single entry', 'Commercial purposes'],
     detailedInfo: {
-      validity: '90 days from issue',
-      maxStay: '60 days',
+      validity: 'Please note that the visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry',
       entries: 'Single',
       interview: 'May be required'
     },
@@ -130,8 +130,8 @@ const visaServices = [
     country: 'indonesia',
     countryName: 'Indonesia',
     visaType: 'medical',
-    title: 'Medical Treatment Visa',
-    description: 'Specialized visa for foreign nationals seeking medical treatment in Indonesian healthcare facilities.',
+    title: 'Medical Treatment',
+    description: 'A person who visits Indonesia for medical treatment',
     price: 'USD 75',
     priceNumeric: 75,
     processingTime: '10-21 days',
@@ -141,8 +141,8 @@ const visaServices = [
     iconColor: '#dc2626',
     features: ['Medical treatment', 'Extended stay possible', 'Hospital coordination', 'Health focused'],
     detailedInfo: {
-      validity: 'As per medical needs',
-      maxStay: 'Up to 1 year',
+      validity: 'This visa must be used to enter Indonesia within 90 days from the date of issue.',
+      maxStay: 'Up to 60 Days (Extendable)',
       entries: 'Single/Multiple',
       interview: 'Required'
     },
@@ -186,8 +186,8 @@ const visaServices = [
     country: 'indonesia',
     countryName: 'Indonesia',
     visaType: 'family',
-    title: 'Family Visit Visa',
-    description: 'Visa for foreign nationals visiting Indonesian family members or Indonesian residents.',
+    title: 'Medical Treatment Multiple Entry Visa (2 Years)',
+    description: 'A person who visits Indonesia for medical treatment (multiple entry visa)',
     price: 'USD 50',
     priceNumeric: 50,
     processingTime: '14-21 days',
@@ -197,8 +197,8 @@ const visaServices = [
     iconColor: '#db2777',
     features: ['Family visits', 'Longer stays', 'Local sponsor required', 'Relationship based'],
     detailedInfo: {
-      validity: '1 year',
-      maxStay: '60 days per visit',
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry (extendable)',
       entries: 'Multiple',
       interview: 'May be required'
     },
@@ -213,9 +213,9 @@ const visaServices = [
     id: 8,
     country: 'indonesia',
     countryName: 'Indonesia',
-    visaType: 'student',
-    title: 'Student Visa (B211C)',
-    description: 'Educational visa for foreign students attending short-term courses, training programs, or educational activities in Indonesia.',
+    visaType: 'Medical',
+    title: 'Medical Treatment Multiple Entry Visa (1 Years)',
+    description: 'A person who visits Indonesia for medical treatment (multiple entry visa)',
     price: 'USD 100',
     priceNumeric: 100,
     processingTime: '21-30 days',
@@ -225,8 +225,148 @@ const visaServices = [
     iconColor: '#059669',
     features: ['Educational purposes', 'Institution required', 'Study activities', 'Academic focus'],
     detailedInfo: {
-      validity: '1 year',
-      maxStay: 'As per course duration',
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry (extendable)',
+      entries: 'Single',
+      interview: 'Required'
+    },
+    allowedActivities: [
+      'Attending educational courses and training',
+      'Academic research activities',
+      'Educational tours and field studies',
+      'Cultural exchange programs'
+    ]
+  },
+  {
+    id: 9,
+    country: 'indonesia',
+    countryName: 'Indonesia',
+    visaType: 'Social',
+    title: 'Social, Humanitarian, and Volunteering',
+    description: 'A person who conducts social program, humanitarian assistance, or voluntary program in Indonesia',
+    price: 'USD 100',
+    priceNumeric: 100,
+    processingTime: '21-30 days',
+    requirements: ['Passport valid for at least 6 months', 'Educational institution acceptance letter', 'Academic transcripts', 'Financial proof', 'Health certificate'],
+    success_rate: '94%',
+    icon: '🇮🇩',
+    iconColor: '#059669',
+    features: ['Educational purposes', 'Institution required', 'Study activities', 'Academic focus'],
+    detailedInfo: {
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days (Extendable)',
+      entries: 'Single',
+      interview: 'Required'
+    },
+    allowedActivities: [
+      'Attending educational courses and training',
+      'Academic research activities',
+      'Educational tours and field studies',
+      'Cultural exchange programs'
+    ]
+  },
+  {
+    id: 8,
+    country: 'indonesia',
+    countryName: 'Indonesia',
+    visaType: 'Medical',
+    title: 'Medical Treatment Multiple Entry Visa (1 Years)',
+    description: 'A person who visits Indonesia for medical treatment (multiple entry visa)',
+    price: 'USD 100',
+    priceNumeric: 100,
+    processingTime: '21-30 days',
+    requirements: ['Passport valid for at least 6 months', 'Educational institution acceptance letter', 'Academic transcripts', 'Financial proof', 'Health certificate'],
+    success_rate: '94%',
+    icon: '🇮🇩',
+    iconColor: '#059669',
+    features: ['Educational purposes', 'Institution required', 'Study activities', 'Academic focus'],
+    detailedInfo: {
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry (extendable)',
+      entries: 'Single',
+      interview: 'Required'
+    },
+    allowedActivities: [
+      'Attending educational courses and training',
+      'Academic research activities',
+      'Educational tours and field studies',
+      'Cultural exchange programs'
+    ]
+  },
+  {
+    id: 8,
+    country: 'indonesia',
+    countryName: 'Indonesia',
+    visaType: 'Medical',
+    title: 'Medical Treatment Multiple Entry Visa (1 Years)',
+    description: 'A person who visits Indonesia for medical treatment (multiple entry visa)',
+    price: 'USD 100',
+    priceNumeric: 100,
+    processingTime: '21-30 days',
+    requirements: ['Passport valid for at least 6 months', 'Educational institution acceptance letter', 'Academic transcripts', 'Financial proof', 'Health certificate'],
+    success_rate: '94%',
+    icon: '🇮🇩',
+    iconColor: '#059669',
+    features: ['Educational purposes', 'Institution required', 'Study activities', 'Academic focus'],
+    detailedInfo: {
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry (extendable)',
+      entries: 'Single',
+      interview: 'Required'
+    },
+    allowedActivities: [
+      'Attending educational courses and training',
+      'Academic research activities',
+      'Educational tours and field studies',
+      'Cultural exchange programs'
+    ]
+  },
+  {
+    id: 8,
+    country: 'indonesia',
+    countryName: 'Indonesia',
+    visaType: 'Medical',
+    title: 'Medical Treatment Multiple Entry Visa (1 Years)',
+    description: 'A person who visits Indonesia for medical treatment (multiple entry visa)',
+    price: 'USD 100',
+    priceNumeric: 100,
+    processingTime: '21-30 days',
+    requirements: ['Passport valid for at least 6 months', 'Educational institution acceptance letter', 'Academic transcripts', 'Financial proof', 'Health certificate'],
+    success_rate: '94%',
+    icon: '🇮🇩',
+    iconColor: '#059669',
+    features: ['Educational purposes', 'Institution required', 'Study activities', 'Academic focus'],
+    detailedInfo: {
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry (extendable)',
+      entries: 'Single',
+      interview: 'Required'
+    },
+    allowedActivities: [
+      'Attending educational courses and training',
+      'Academic research activities',
+      'Educational tours and field studies',
+      'Cultural exchange programs'
+    ]
+  },
+  {
+    id: 8,
+    country: 'indonesia',
+    countryName: 'Indonesia',
+    visaType: 'Medical',
+    title: 'Medical Treatment Multiple Entry Visa (1 Years)',
+    description: 'A person who visits Indonesia for medical treatment (multiple entry visa)',
+    price: 'USD 100',
+    priceNumeric: 100,
+    processingTime: '21-30 days',
+    requirements: ['Passport valid for at least 6 months', 'Educational institution acceptance letter', 'Academic transcripts', 'Financial proof', 'Health certificate'],
+    success_rate: '94%',
+    icon: '🇮🇩',
+    iconColor: '#059669',
+    features: ['Educational purposes', 'Institution required', 'Study activities', 'Academic focus'],
+    detailedInfo: {
+      validity: 'Visa validity period is different from the period of stay, kindly check your visa for the period of stay Information.',
+      maxStay: 'Up to 60 Days per entry (extendable)',
       entries: 'Single',
       interview: 'Required'
     },

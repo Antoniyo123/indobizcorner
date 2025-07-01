@@ -42,8 +42,8 @@
 
 .aboutus-hero-image {
   flex: 1;
-  max-width: 500px;
-  height: 600px;
+  max-width: 100%;
+  height: 100%;
   /* border-radius: 16px; */
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
@@ -245,7 +245,7 @@
 
 .aboutus-member-image {
   width: 100%;
-  height: 300px;
+  height: 500px;
   overflow: hidden;
   position: relative;
 }

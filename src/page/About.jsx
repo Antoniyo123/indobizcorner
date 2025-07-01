@@ -19,9 +19,9 @@ const AboutUs = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      position: "Creative Director",
-      image: require('../assets/img/profile3.jpg'),
+      name: "M. Ferial Dwiputera Wardana",
+      position: "Direktur",
+      image: require('../assets/img/_DSC9312-Enhanced-NR.jpg'),
       bio: "Sarah brings over 8 years of experience in creative direction and brand strategy. She has worked with Fortune 500 companies and startups alike, helping them build compelling visual narratives.",
       experience: "8+ years",
       education: "Master's in Visual Design from Art Institute",
@@ -29,9 +29,9 @@ const AboutUs = () => {
     },
     {
       id: 2,
-      name: "Michael Chen",
-      position: "Lead Developer",
-      image: require('../assets/img/profile.jpg'),
+      name: "Ardiansyah Saputra",
+      position: "Direktur Operational",
+      image: require('../assets/img/_DSC9344-Enhanced-NR.jpg'),
       bio: "Michael is a full-stack developer with expertise in modern web technologies. He leads our development team and ensures all projects meet the highest technical standards.",
       experience: "6+ years",
       education: "Bachelor's in Computer Science from MIT",
@@ -39,44 +39,44 @@ const AboutUs = () => {
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
-      position: "UX Designer",
-      image: require('../assets/img/profile1.jpg'),
+      name: "Sidharta DharmaWardhana",
+      position: "Direktur Utama",
+      image: require('../assets/img/pakdartha.jpeg'),
       bio: "Emma specializes in user experience design and human-computer interaction. She's passionate about creating intuitive and accessible digital experiences.",
       experience: "5+ years",
       education: "Master's in HCI from Stanford University",
       skills: ["User Research", "Prototyping", "Interaction Design", "Accessibility"]
     },
-    {
-      id: 4,
-      name: "David Kim",
-      position: "Product Manager",
-      image: require('../assets/img/profile2.jpg'),
-      bio: "David oversees product strategy and development lifecycle. He bridges the gap between technical teams and business objectives to deliver successful products.",
-      experience: "7+ years",
-      education: "MBA from Harvard Business School",
-      skills: ["Product Strategy", "Agile Management", "Market Analysis", "Stakeholder Management"]
-    },
-    {
-      id: 5,
-      name: "Lisa Thompson",
-      position: "Brand Strategist",
-      image: require('../assets/img/profile3.jpg'),
-      bio: "Lisa develops comprehensive brand strategies that resonate with target audiences. She combines market research with creative insights to build strong brand identities.",
-      experience: "6+ years",
-      education: "Master's in Marketing from Northwestern",
-      skills: ["Brand Development", "Market Research", "Content Strategy", "Social Media"]
-    },
-    {
-      id: 6,
-      name: "Alex Miller",
-      position: "Full Stack Developer",
-      image: require('../assets/img/profile5.jpg'),
-      bio: "Alex is skilled in both frontend and backend development. He enjoys solving complex technical challenges and building scalable web applications.",
-      experience: "4+ years",
-      education: "Bachelor's in Software Engineering",
-      skills: ["JavaScript", "React", "Express.js", "Database Design"]
-    }
+    // {
+    //   id: 4,
+    //   name: "David Kim",
+    //   position: "Product Manager",
+    //   image: require('../assets/img/profile2.jpg'),
+    //   bio: "David oversees product strategy and development lifecycle. He bridges the gap between technical teams and business objectives to deliver successful products.",
+    //   experience: "7+ years",
+    //   education: "MBA from Harvard Business School",
+    //   skills: ["Product Strategy", "Agile Management", "Market Analysis", "Stakeholder Management"]
+    // },
+    // {
+    //   id: 5,
+    //   name: "Lisa Thompson",
+    //   position: "Brand Strategist",
+    //   image: require('../assets/img/profile3.jpg'),
+    //   bio: "Lisa develops comprehensive brand strategies that resonate with target audiences. She combines market research with creative insights to build strong brand identities.",
+    //   experience: "6+ years",
+    //   education: "Master's in Marketing from Northwestern",
+    //   skills: ["Brand Development", "Market Research", "Content Strategy", "Social Media"]
+    // },
+    // {
+    //   id: 6,
+    //   name: "Alex Miller",
+    //   position: "Full Stack Developer",
+    //   image: require('../assets/img/profile5.jpg'),
+    //   bio: "Alex is skilled in both frontend and backend development. He enjoys solving complex technical challenges and building scalable web applications.",
+    //   experience: "4+ years",
+    //   education: "Bachelor's in Software Engineering",
+    //   skills: ["JavaScript", "React", "Express.js", "Database Design"]
+    // }
   ];
 
   const openModal = (member) => {
@@ -107,14 +107,13 @@ const AboutUs = () => {
             <h1 className="aboutus-hero-title">About our Company.</h1>
             <div className="aboutus-hero-description">
               <p>
-                Based in the vibrant heart of Jakarta, Bali, Kreativy is not just a Visa Service agent 
-                we're your partners in creativity.
+              We are established since 2012 with experience from 2002 as a freelance worker in the field of investment and immigration.
               </p>
             </div>
           </div>
           
           <div className="aboutus-hero-image">
-            <img src={require('../assets/img/pexels-timmossholder-1722196.jpg')} alt="Our creative workspace" />
+            <img src={require('../assets/img/teamindobiz.png')} alt="Our creative workspace" />
           </div>
           
           <div className="aboutus-scroll-indicator">
@@ -129,10 +128,7 @@ const AboutUs = () => {
       <section className="aboutus-mission-section">
         <div className="aboutus-mission-content">
           <p className="aboutus-mission-text">
-            Our mission is to turn your dreams into reality, one pixel at a time. With 
-            a diverse team of designers, developers, and innovators, we're 
-            constantly pushing the boundaries of what's possible in the digital 
-            world.
+          the company is engaged in business consultants, immigration, environmental and water consultans and labor placement, document service bureaus, medical equipment distributors
           </p>
         </div>
       </section>
@@ -156,8 +152,7 @@ const AboutUs = () => {
       <section className="aboutus-vision-section">
         <div className="aboutus-vision-content">
           <h2 className="aboutus-vision-title">
-            Founded with a vision to redefine design through a modern and friendly lens, we've 
-            become more than just a design agency; we're a community of kindred spirits who share a
+          We also manage job training institutions for work placement on cruise ships and work with several collages in canada.With a wealth of experience and expertise that we have, good relationships established with relevant government agencies and also local governments in supporting our work, making us a pioneer and trusted to complete every task and various cases quickly and precisely, wich is not possible can be completed by our competitors.
           </h2>
         </div>
       </section>
