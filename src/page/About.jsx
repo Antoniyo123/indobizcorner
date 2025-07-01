@@ -47,36 +47,36 @@ const AboutUs = () => {
       education: "Master's in HCI from Stanford University",
       skills: ["User Research", "Prototyping", "Interaction Design", "Accessibility"]
     },
-    // {
-    //   id: 4,
-    //   name: "David Kim",
-    //   position: "Product Manager",
-    //   image: require('../assets/img/profile2.jpg'),
-    //   bio: "David oversees product strategy and development lifecycle. He bridges the gap between technical teams and business objectives to deliver successful products.",
-    //   experience: "7+ years",
-    //   education: "MBA from Harvard Business School",
-    //   skills: ["Product Strategy", "Agile Management", "Market Analysis", "Stakeholder Management"]
-    // },
-    // {
-    //   id: 5,
-    //   name: "Lisa Thompson",
-    //   position: "Brand Strategist",
-    //   image: require('../assets/img/profile3.jpg'),
-    //   bio: "Lisa develops comprehensive brand strategies that resonate with target audiences. She combines market research with creative insights to build strong brand identities.",
-    //   experience: "6+ years",
-    //   education: "Master's in Marketing from Northwestern",
-    //   skills: ["Brand Development", "Market Research", "Content Strategy", "Social Media"]
-    // },
-    // {
-    //   id: 6,
-    //   name: "Alex Miller",
-    //   position: "Full Stack Developer",
-    //   image: require('../assets/img/profile5.jpg'),
-    //   bio: "Alex is skilled in both frontend and backend development. He enjoys solving complex technical challenges and building scalable web applications.",
-    //   experience: "4+ years",
-    //   education: "Bachelor's in Software Engineering",
-    //   skills: ["JavaScript", "React", "Express.js", "Database Design"]
-    // }
+    {
+      id: 4,
+      name: "M. Ferarry Perdhana Wardhana",
+      position: "Direktur",
+      image: require('../assets/img/ferary.jpeg'),
+      bio: "David oversees product strategy and development lifecycle. He bridges the gap between technical teams and business objectives to deliver successful products.",
+      experience: "7+ years",
+      education: "MBA from Harvard Business School",
+      skills: ["Product Strategy", "Agile Management", "Market Analysis", "Stakeholder Management"]
+    },
+    {
+      id: 5,
+      name: "Lisa Thompson",
+      position: "Brand Strategist",
+      image: require('../assets/img/profile3.jpg'),
+      bio: "Lisa develops comprehensive brand strategies that resonate with target audiences. She combines market research with creative insights to build strong brand identities.",
+      experience: "6+ years",
+      education: "Master's in Marketing from Northwestern",
+      skills: ["Brand Development", "Market Research", "Content Strategy", "Social Media"]
+    },
+    {
+      id: 6,
+      name: "Alex Miller",
+      position: "Full Stack Developer",
+      image: require('../assets/img/profile5.jpg'),
+      bio: "Alex is skilled in both frontend and backend development. He enjoys solving complex technical challenges and building scalable web applications.",
+      experience: "4+ years",
+      education: "Bachelor's in Software Engineering",
+      skills: ["JavaScript", "React", "Express.js", "Database Design"]
+    }
   ];
 
   const openModal = (member) => {
@@ -175,7 +175,7 @@ const AboutUs = () => {
               onClick={() => openModal(member)}
             >
               <div className="aboutus-member-image">
-                <img src={member.image} alt={member.name} />
+                {/* <img src={member.image} alt={member.name} /> */}
                 <div className="aboutus-member-overlay">
                   <span>View Details</span>
                 </div>
