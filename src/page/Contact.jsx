@@ -138,7 +138,7 @@ const ContactPage = () => {
               <div className="contact-card-icon-wrapper">
                 <MapPin className="contact-card-icon" />
               </div>
-              <h3 className="contact-card-title">Address</h3>
+              <h3 className="contact-card-title">Our Office Locations</h3>
               <p className="contact-card-text contact-mb-0">Ruko Tiara Buncit Blok D12
 Jl. Kemang Utara IX, Pancoran
 Jakarta Selatan 12760
@@ -196,11 +196,9 @@ Jakarta Selatan 12760
         <div className="contact-form-container">
           <div className="contact-form-content">
             <div className="contact-form-text">
-              <h2 className="contact-form-title">Get in touch</h2>
+              <h2 className="contact-form-title">Get Started on Your Visa Journey</h2>
               <p className="contact-form-description">
-                To provide better service and faster response, please fill out 
-                the contact information form carefully. We try to review your 
-                needs and requests carefully and in the shortest possible time
+              Have questions or need help about visa? Send us your details, and our team will handle the rest.
               </p>
             </div>
 

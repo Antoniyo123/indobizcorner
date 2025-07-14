@@ -45,46 +45,46 @@ const createUser = async (userData) => {
   const testimonials = [
     {
       id: 1,
-      name: "Fatima Khoury",
+      name: "The Love Gurus",
       username: "dilatory_curtains_98",
       image: require('../assets/img/profile1.jpg'),
-      text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
+      text: "We needed our visas extended and they did it so quickly, even with a holiday in the middle they got everything sorted in a matter of days.There had been a power outage when we got into the airport and 2 of our visas were not coming up in the system and they dealt with all of it swiftly and professionally. Highly recommend using them over trying to do things yourself. All we did was show up and give them our papers and it was all taken care of."
     },
     {
       id: 2,
-      name: "Hassan Ali",
+      name: "Sanna Wandtke",
       username: "turbulent_unicorn_29",
       image: require('../assets/img/profile1.jpg'),
-      text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
+      text: "I am really happy with the service provided here, very competent. Because I was a little bit late to extend my visa, it was more complicated, but I got regular whatsapp messages from the nice lady who helped me, to update me about my status. It went all really smoothly. Thanks you for your service!"
     },
     {
       id: 3,
-      name: "Jorge Martinez",
+      name: "Shams W.",
       username: "nefarious_jellybeans_91",
       image: require('../assets/img/profile1.jpg'),
-      text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
+      text: "The indobiz team did a fantastic job sorting my visa extension whilst I was away.They took the stress and hassle out for me and processed the visa promptly. Highly recommended!"
     },
     {
       id: 4,
-      name: "Nicolás Sánchez",
+      name: "J. Adam",
       username: "pervasive_inker_83",
       image: require('../assets/img/profile1.jpg'),
-      text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
+      text: "I recently extended my visa on arrival, and I was extremely impressed with the service. The staff was highly professional, and the process was both fast and efficient. Additionally, their prices are very competitive. I highly recommend their services. As a thoughtful extra, they even provided condiments, which was a nice touch."
     },
     {
       id: 5,
-      name: "Noel Jensen",
+      name: "Louis Jo",
       username: "nefarious_shop_47",
       image: require('../assets/img/profile1.jpg'),
-      text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
+      text: "The passport processing service at Visa is very fast. The service here is good and is trusted by foreign tourists. The response given here is very competent and professional. Can handle passport extensions well and be given direction when doing so"
     },
-    {
-      id: 6,
-      name: "Ahmad Khan",
-      username: "antic_circus_76",
-      image: require('../assets/img/profile1.jpg'),
-      text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
-    }
+    // {
+    //   id: 6,
+    //   name: "Ahmad Khan",
+    //   username: "antic_circus_76",
+    //   image: require('../assets/img/profile1.jpg'),
+    //   text: "The progress tracker is fantastic. It's motivating to see how much I've improved over time. The app has a great mix of common and challenging words."
+    // }
   ];
 
   const clients = [
@@ -154,11 +154,11 @@ const createUser = async (userData) => {
                       ))}
                     </p>
                     <div className="testimonial-author">
-                      <img 
+                      {/* <img 
                         src={testimonial.image} 
                         alt={testimonial.name}
                         className="author-image"
-                      />
+                      /> */}
                       <div className="author-info">
                         <h4 className="author-name">{testimonial.name}</h4>
                         <p className="author-username">{testimonial.username}</p>

@@ -24,12 +24,12 @@ const Articles = () => {
         <article className="article-card">
           <div className="article-image">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" 
+              src={require('../assets/img/article1.png')} 
               alt="Modern library interior with curved architecture"
             />
           </div>
           <div className="article-content">
-            <h3>Exploring the themes of this year's literary premiere</h3>
+            <h3>Cepat, Tegas dan Lugas Bukti Nyata Kanim Kelas I Non TPI Bekasi Jaring 27 WNA</h3>
             <div className="article-footer">
               <span className="article-date">13 Dec 2024</span>
               <button 
@@ -48,12 +48,12 @@ const Articles = () => {
         <article className="article-card">
           <div className="article-image">
             <img 
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop" 
+              src={require('../assets/img/article2.png')} 
               alt="Green technology and environmental illustration"
             />
           </div>
           <div className="article-content">
-            <h3>How green technologies are shaping tomorrow's world</h3>
+            <h3>Anggota DPR Berikan Apresiasi Terhadap Kinerja Ditjen Imigrasi Terkait Kasus Haji Tanpa Visa Resmi</h3>
             <div className="article-footer">
               <span className="article-date">05 Sep 2024</span>
               <button 
@@ -72,12 +72,12 @@ const Articles = () => {
         <article className="article-card">
           <div className="article-image">
             <img 
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop" 
+              src={require('../assets/img/article3.png')} 
               alt="Deforested area showing environmental impact"
             />
           </div>
           <div className="article-content">
-            <h3>Deforestation at a crossroads</h3>
+            <h3>6 WNA Terjaring Razia di Apartemen Kalibata City</h3>
             <div className="article-footer">
               <span className="article-date">23 Aug 2024</span>
               <button 

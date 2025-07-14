@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { QRCodeCanvas } from 'qrcode.react';
 import '../styles/AboutSection.css';
+import { apiService } from '../services/api'; // ganti path sesuai lokasi `api.js`
+
 
 const PromoSection = () => {
   const url = "https://indobizcorner.vercel.app/";
@@ -48,8 +50,20 @@ const PromoSection = () => {
   });
   const [isOfferExpired, setIsOfferExpired] = useState(false);
 
-  const MAX_CLAIMS = 7;
-
+  const MAX_CLAIMS = 77;
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'R') {
+        e.preventDefault();
+        resetClaimCounter();
+      }
+    };
+  
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
+  
+  
   // Auto slide functionality
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -120,14 +134,7 @@ const PromoSection = () => {
   };
 
   // Fungsi admin untuk reset counter (bisa dihapus di production)
-  const resetClaimCounter = () => {
-    if (window.confirm('Are you sure you want to reset the claim counter? This action cannot be undone.')) {
-      setClaimCount(0);
-      setIsOfferExpired(false);
-      localStorage.removeItem('promoClaimCount');
-      alert('Claim counter has been reset!');
-    }
-  };
+
 
   // Keyboard shortcut untuk admin reset (Ctrl+Shift+R)
   useEffect(() => {
@@ -142,26 +149,55 @@ const PromoSection = () => {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
 
+  const resetClaimCounter = async () => {
+    const confirmReset = window.confirm('Reset semua klaim promo?');
+  
+    if (!confirmReset) return;
+  
+    try {
+      // Kirim permintaan reset ke backend
+      await apiService.resetPromoClaims({ secret: 'admin123' }); // Ganti 'admin123' kalau kamu pakai ENV
+  
+      // Reset frontend state
+      setClaimCount(0);
+      setIsOfferExpired(false);
+      localStorage.removeItem('promoClaimCount');
+  
+      alert('✅ Semua klaim berhasil direset!');
+    } catch (error) {
+      console.error('Reset failed:', error);
+      alert('❌ Gagal reset klaim.');
+    }
+  };
+  
+  
+  
+  
+
   // Fungsi untuk handle submit form di modal
-  const handleSubmitForm = (e) => {
+  const handleSubmitForm = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
-      promo: selectedOffer?.title || promoData[currentSlide].title,
+      promo: selectedOffer?.title || currentPromo.title,
       claimNumber: selectedOffer?.claimNumber || claimCount
     };
-    
-    // Kirim data ke backend atau email service
-    console.log('Form submitted:', data);
-    
-    // Tutup modal dan tampilkan notifikasi sukses
-    setShowModal(false);
-    setShowNotification(true);
-    setTimeout(() => setShowNotification(false), 3000);
+  
+    try {
+      await apiService.submitPromoClaim(data); // ⬅️ kirim ke backend
+      setShowModal(false);
+      setShowNotification(true);
+      setTimeout(() => setShowNotification(false), 3000);
+    } catch (error) {
+      console.error('Failed to send promo claim:', error);
+      alert('Gagal mengirim promo claim. Silakan coba lagi.');
+    }
   };
+  
+  
 
   const currentPromo = promoData[currentSlide];
 
@@ -357,7 +393,16 @@ const PromoSection = () => {
             )}
           </div>
         </div>
+        
       )}
+            <button 
+        onClick={resetClaimCounter} 
+        className="admin-reset-btn"
+      >
+        🔄 Reset Promo (Admin)
+      </button>
+
+
     </>
   );
 };

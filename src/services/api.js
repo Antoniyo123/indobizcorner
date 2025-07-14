@@ -64,21 +64,23 @@ export const apiService = {
         'Content-Type': 'multipart/form-data',
       },
     }),
-    submitApplication: (formData) =>
-      api.post('/api/submit-application', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      }),
+    // submitApplication: (formData) =>
+    //   api.post('/api/submit-application', formData, {
+    //     headers: {
+    //       'Content-Type': 'multipart/form-data',
+    //     },
+    //   }),
   
     // ✅ Tambahkan ini:
     submitContactMessage: (contactData) =>
       api.post('/api/contact-message', contactData),
     submitConsultation: (data) => api.post('/api/consultation-request', data),
-    submitApplication: (formData) =>
-      api.post('/api/submit-application', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      }),
+
+      submitPromoClaim: (data) => api.post('/api/promo-claim', data),
+      resetPromoClaims: (payload) => api.post('/api/promo-claim/reset', payload),
+
+
+
 };
 
 export default api;

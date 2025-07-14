@@ -5,6 +5,25 @@
   position: relative;
   overflow: hidden;
 }
+.admin-reset-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background-color: #e53935;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.admin-reset-btn:hover {
+  background-color: #b71c1c;
+}
 
 .promo-section::before {
   content: '';

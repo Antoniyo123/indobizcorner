@@ -19,9 +19,9 @@ const AboutUs = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "M. Ferial Dwiputera Wardana",
-      position: "Direktur",
-      image: require('../assets/img/_DSC9312-Enhanced-NR.jpg'),
+      name: "Sidharta DharmaWardhana",
+      position: "Direktur Utama",
+      image: require('../assets/img/pakdarta.png'),
       bio: "Sarah brings over 8 years of experience in creative direction and brand strategy. She has worked with Fortune 500 companies and startups alike, helping them build compelling visual narratives.",
       experience: "8+ years",
       education: "Master's in Visual Design from Art Institute",
@@ -31,7 +31,7 @@ const AboutUs = () => {
       id: 2,
       name: "Ardiansyah Saputra",
       position: "Direktur Operational",
-      image: require('../assets/img/_DSC9344-Enhanced-NR.jpg'),
+      image: require('../assets/img/pakardi.png'),
       bio: "Michael is a full-stack developer with expertise in modern web technologies. He leads our development team and ensures all projects meet the highest technical standards.",
       experience: "6+ years",
       education: "Bachelor's in Computer Science from MIT",
@@ -39,9 +39,9 @@ const AboutUs = () => {
     },
     {
       id: 3,
-      name: "Sidharta DharmaWardhana",
-      position: "Direktur Utama",
-      image: require('../assets/img/pakdartha.jpeg'),
+      name: "M. Ferarry Perdhana Wardhana",
+      position: "Direktur",
+      image: require('../assets/img/ferari.png'),
       bio: "Emma specializes in user experience design and human-computer interaction. She's passionate about creating intuitive and accessible digital experiences.",
       experience: "5+ years",
       education: "Master's in HCI from Stanford University",
@@ -49,9 +49,9 @@ const AboutUs = () => {
     },
     {
       id: 4,
-      name: "M. Ferarry Perdhana Wardhana",
+      name: "M. Ferial dwi putera",
       position: "Direktur",
-      image: require('../assets/img/ferary.jpeg'),
+      image: require('../assets/img/ferial.png'),
       bio: "David oversees product strategy and development lifecycle. He bridges the gap between technical teams and business objectives to deliver successful products.",
       experience: "7+ years",
       education: "MBA from Harvard Business School",
@@ -59,24 +59,24 @@ const AboutUs = () => {
     },
     {
       id: 5,
-      name: "Lisa Thompson",
-      position: "Brand Strategist",
-      image: require('../assets/img/profile3.jpg'),
+      name: "Iqbal",
+      position: "Human Resources",
+      image: require('../assets/img/pakiqbal.png'),
       bio: "Lisa develops comprehensive brand strategies that resonate with target audiences. She combines market research with creative insights to build strong brand identities.",
       experience: "6+ years",
       education: "Master's in Marketing from Northwestern",
       skills: ["Brand Development", "Market Research", "Content Strategy", "Social Media"]
     },
-    {
-      id: 6,
-      name: "Alex Miller",
-      position: "Full Stack Developer",
-      image: require('../assets/img/profile5.jpg'),
-      bio: "Alex is skilled in both frontend and backend development. He enjoys solving complex technical challenges and building scalable web applications.",
-      experience: "4+ years",
-      education: "Bachelor's in Software Engineering",
-      skills: ["JavaScript", "React", "Express.js", "Database Design"]
-    }
+    // {
+    //   id: 6,
+    //   name: "Alex Miller",
+    //   position: "Full Stack Developer",
+    //   image: require('../assets/img/profile5.jpg'),
+    //   bio: "Alex is skilled in both frontend and backend development. He enjoys solving complex technical challenges and building scalable web applications.",
+    //   experience: "4+ years",
+    //   education: "Bachelor's in Software Engineering",
+    //   skills: ["JavaScript", "React", "Express.js", "Database Design"]
+    // }
   ];
 
   const openModal = (member) => {
@@ -160,10 +160,9 @@ const AboutUs = () => {
       {/* Our Team Section */}
       <section className="aboutus-team-section">
         <div className="aboutus-team-header">
-          <h2 className="aboutus-team-title">Our Team</h2>
+          <h2 className="aboutus-team-title">Meet Our Team</h2>
           <p className="aboutus-team-description">
-            Meet the creative minds behind our success. Our diverse team of talented professionals 
-            brings together years of experience and fresh perspectives to deliver exceptional results.
+          A team of professionals committed to making your visa and business processes stress-free.
           </p>
         </div>
         
@@ -175,7 +174,7 @@ const AboutUs = () => {
               onClick={() => openModal(member)}
             >
               <div className="aboutus-member-image">
-                {/* <img src={member.image} alt={member.name} /> */}
+                <img src={member.image} alt={member.name} />
                 <div className="aboutus-member-overlay">
                   <span>View Details</span>
                 </div>
@@ -199,7 +198,7 @@ const AboutUs = () => {
             
             <div className="aboutus-modal-header">
               <div className="aboutus-modal-image">
-                <img src={selectedMember.image} alt={selectedMember.name} />
+                {/* <img src={selectedMember.image} alt={selectedMember.name} /> */}
               </div>
               <div className="aboutus-modal-info">
                 <h2 className="aboutus-modal-name">{selectedMember.name}</h2>
